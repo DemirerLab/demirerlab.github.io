@@ -3,7 +3,7 @@
 Source for https://www.demirerlab.com, migrated from Wix in November 2026. The PI (Gözde Demirer) asks Claude for routine updates ("add this paper", "add/remove this person", "add this photo", "post this news"). This file is the playbook for those requests.
 
 - GitHub repository: https://github.com/DemirerLab/demirerlab.github.io (public, first pushed 2026-11-07; the live site builds from `main`). Commits here use the PI's private GitHub address (`267142305+gozdedemirer@users.noreply.github.com`, set in this repo's git config), so no personal email shows in the public history.
-- Custom domain: not switched yet. The domain is registered at Wix and expires 2026-12-17, so keep auto-renew on. See "Switching www.demirerlab.com to GitHub Pages" below.
+- Custom domain: www.demirerlab.com (switched 2026-11-07; set by the `CNAME` file, and verified for the DemirerLab org). DNS stays at Wix: the apex `demirerlab.com` has A records to GitHub's four IPs (185.199.108-111.153), `www` is a CNAME to `demirerlab.github.io`, and a `_github-pages-challenge-DemirerLab` TXT record keeps the domain verified (don't delete it). The domain is registered at Wix and expires 2026-12-17, so keep auto-renew on.
 
 ## How the site works
 
@@ -32,7 +32,7 @@ Source for https://www.demirerlab.com, migrated from Wix in November 2026. The P
   - Reveals: `_scripts/effects.js` and `_styles/reveal.scss`. Only content below the first screen fades up; nothing is hidden without JavaScript, under reduced motion (which also stops the eCIS video loop) or when printing. While the eCIS animation isn't playing it shows a still, `images/design/ecis-poster.jpg` (set in `_scripts/effects.js`); make a new still if the video is replaced.
 - What new content gets automatically: a plain markdown image becomes a mat card that enlarges on click (write a real alt text); a new page under `research/` joins the dropdown and the phone menu (set `menu-order:`) and gets the one-column research layout; a news post's `image:` sets its News list thumbnail (unless `thumbnail:` is set) and the picture shown in link previews, while the post page shows its photos whole in the body; Publications and News searches hide year headings, and whole sections, left without a match.
 - Special cases keyed on content: an image whose alt text has the word "logo" or "logos" is not zoomable, and up to three such images in a row share one panel at a matching size (the funder logos on the Research page). Other figures never join, so put related photos in a grid. The Team page balances rows of 5 and of 7-8 people (`_styles/portrait.scss`); check it when a group reaches 6 or 9. The Team alumni list keeps one line per person only while its heading stays "Alumni" (id `alumni`), and a paragraph that is only bold text inside a paper list ("Highlights" on Publications) is styled as a label (`_styles/section.scss`). A `<br>` in a banner title is dropped on phones so the title wraps evenly, so keep a space before it (`Delivery <br>for`).
-- Avoid: inline `style` on sections or `<br>` for spacing; third-party libraries or CDNs for effects; Chrome-only CSS such as scroll-driven animations (the PI uses Safari, so pair `backdrop-filter` with `-webkit-backdrop-filter`); hiding content in CSS outside the `html.reveal-on` guard; new colors without checking WCAG AA contrast in light and dark mode.
+- Avoid: inline `style` on sections or `<br>` for spacing; third-party libraries or CDNs for effects; Chrome-only CSS such as scroll-driven animations (many visitors use Safari on iPhones and Macs, so pair `backdrop-filter` with `-webkit-backdrop-filter`; the PI uses Chrome); hiding content in CSS outside the `html.reveal-on` guard; new colors without checking WCAG AA contrast in light and dark mode.
 
 ## Local tools on the PI's Mac
 
@@ -53,7 +53,7 @@ cd ~/Desktop/caltech/projects/demirerlab-website && export PATH="$HOME/.rubies/r
 ```
 
 - Ruby 3.4.12 lives in `~/.rubies/` (built with ruby-build, with libyaml in `~/.rubies/.deps`). Python with Manubot lives in `~/.local/share/demirerlab-website/venv`. `NotOpenSSLWarning` lines from that Python are harmless.
-- Live preview: the Claude desktop app's `demirerlab-website` server (in `~/Desktop/.claude/launch.json`) runs `jekyll serve` on port 4000. Restart it after editing `_config.yaml`. It also listens on the local network (`--host 0.0.0.0`), so a phone or iPad on the same Wi-Fi can open `http://<the Mac's Wi-Fi address>:4000` (find the address with `ipconfig getifaddr en0`). Remove `--host 0.0.0.0` from `launch.json` to keep the preview on the Mac only.
+- Live preview: the Claude desktop app's `demirerlab-website` server (in `~/Desktop/.claude/launch.json`) runs `jekyll serve` on port 4000. Restart it after editing `_config.yaml`. To try an unpublished change on a phone or iPad, add `--host 0.0.0.0` to the `jekyll serve` command in `launch.json` and restart it; a device on the same Wi-Fi then opens `http://<the Mac's Wi-Fi address>:4000` (find the address with `ipconfig getifaddr en0`). Take the flag out again afterwards. The app stops the preview when its browser panel closes; start it again from the app.
 - GitHub access: the PI installs the GitHub CLI and runs `gh auth login` and `gh auth setup-git` once, with access to the DemirerLab org. Claude never types or stores passwords or tokens.
 
 ## Routine requests
