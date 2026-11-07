@@ -1,0 +1,913 @@
+---
+---
+
+// two-tier frosted header
+// wide screens: a slim forest-green bar (secondary pages) above a frosted
+// main bar (logo, lab name, main pages). the slim bar scrolls away and the
+// main bar stays pinned, so the header compacts on scroll without any layout
+// shift. phones: one frosted bar with a menu button.
+
+$collapse: 960px;
+$compact: 1140px;
+$strip: 40px;
+$bar: 90px;
+$bar-tablet: 76px;
+$bar-mobile: 68px;
+$max: 1120px;
+
+header.site-header {
+  position: sticky;
+  top: -$strip;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: $strip $bar;
+  align-items: center;
+  column-gap: 32px;
+  padding: 0 max(32px, calc((100% - #{$max}) / 2));
+  background: none;
+  color: var(--text);
+  box-shadow: none;
+  text-align: left;
+}
+
+// slim top bar
+header.site-header:before {
+  inset: 0 0 auto 0;
+  height: $strip;
+  opacity: 1;
+  background: linear-gradient(90deg, #0f2316 0%, #173322 55%, #1d3d24 100%);
+  z-index: -1;
+}
+
+// frosted glass main bar
+header.site-header:after {
+  content: "";
+  position: absolute;
+  inset: $strip 0 0 0;
+  z-index: -1;
+  border-bottom: 1px solid var(--glass-line);
+  background: var(--glass);
+  -webkit-backdrop-filter: saturate(1.8) blur(18px);
+  backdrop-filter: saturate(1.8) blur(18px);
+}
+
+html.is-scrolled header.site-header:after {
+  background: var(--glass-strong);
+  box-shadow: 0 12px 30px -22px rgba(10, 30, 16, 0.45);
+}
+
+header.site-header a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+// logo and lab name (above the nav, which spans the full header width so
+// the slim bar can use it)
+.home {
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+// show the Caltech wordmark without the empty margin baked into logo.png
+// (wordmark box 456 x 114 inside the 604 x 259 file)
+.logo {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  height: 32px;
+  aspect-ratio: 456 / 114;
+  overflow: hidden;
+}
+
+.logo > img {
+  position: absolute;
+  left: -16.23%;
+  top: -64.04%;
+  width: 132.46%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+}
+
+.logo > svg {
+  width: auto;
+  height: 100%;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--line-strong);
+  font-family: var(--title);
+  text-align: left;
+}
+
+.title {
+  color: var(--ink);
+  font-size: 1.9rem;
+  font-weight: var(--semi-bold);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition: transform 0.35s var(--ease);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-family: var(--body);
+  font-size: 0.74rem;
+  font-weight: var(--bold);
+  line-height: 1.1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 0.3s var(--ease), transform 0.35s var(--ease);
+}
+
+.home:hover .title {
+  color: var(--primary-strong);
+}
+
+[data-dark="true"] .home:hover .title {
+  color: var(--primary);
+}
+
+// navigation
+nav {
+  grid-row: 1 / 3;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-rows: $strip $bar;
+  justify-items: end;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-main,
+.nav-more {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+// the last link's text (not its padding) lines up with the content edge,
+// like the wordmark on the left
+.nav-main {
+  grid-row: 2;
+  gap: 4px;
+  margin-right: -16px;
+}
+
+.nav-more {
+  grid-row: 1;
+  gap: 4px;
+  margin-right: -12px;
+}
+
+nav a {
+  position: relative;
+  white-space: nowrap;
+}
+
+:is(.nav-main, .nav-group) > a {
+  padding: 10px 16px;
+  color: var(--ink) !important;
+  font-family: var(--body);
+  font-size: 1.1rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: -0.005em;
+}
+
+.nav-more > a {
+  padding: 7px 12px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-family: var(--body);
+  font-size: 0.86rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: 0.02em;
+}
+
+.nav-more > a:hover,
+.nav-more > a[aria-current] {
+  color: #ffffff !important;
+}
+
+@media (min-width: #{$collapse + 1px}) {
+  // the ring stays on the dark strip
+  .nav-more > a:focus-visible {
+    outline-color: #c6ec6e;
+    outline-offset: -2px;
+  }
+}
+
+// animated underline
+:is(.nav-main, .nav-group) > a:after,
+.nav-more > a:after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s var(--ease);
+}
+
+.nav-more > a:after {
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 1.5px;
+  background: #c6ec6e;
+}
+
+:is(.nav-main, .nav-group, .nav-more) > a:hover:after,
+:is(.nav-main, .nav-group, .nav-more) > a:focus-visible:after,
+:is(.nav-main, .nav-group, .nav-more) > a[aria-current]:after {
+  transform: scaleX(1);
+}
+
+:is(.nav-main, .nav-group) > a:hover,
+:is(.nav-main, .nav-group) > a[aria-current] {
+  color: var(--primary-strong) !important;
+}
+
+[data-dark="true"] :is(.nav-main, .nav-group) > a:hover,
+[data-dark="true"] :is(.nav-main, .nav-group) > a[aria-current] {
+  color: var(--primary) !important;
+}
+
+// ------------------------------------------------------------------
+// dropdown: a main page with sub-pages (Research) shows them in a small
+// frosted panel on hover or keyboard focus, so visitors can jump straight
+// to a research area. pure CSS; the links stay in the page for phones.
+// ------------------------------------------------------------------
+
+.nav-group {
+  position: relative;
+}
+
+.nav-group > a {
+  display: block;
+  padding-right: 34px;
+}
+
+.nav-group > a:after {
+  right: 34px;
+}
+
+// small chevron that turns when the panel opens
+.nav-caret {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -5px;
+  border-right: 1.75px solid currentColor;
+  border-bottom: 1.75px solid currentColor;
+  opacity: 0.7;
+  transform: rotate(45deg);
+  transition: transform 0.35s var(--ease), margin 0.35s var(--ease);
+}
+
+// the panel hangs just below the bar
+.nav-sub {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: -8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 264px;
+  padding: 8px;
+  border: 1px solid var(--glass-line);
+  border-radius: 18px;
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: saturate(1.8) blur(18px);
+  backdrop-filter: saturate(1.8) blur(18px);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease), visibility 0s linear 0.3s;
+}
+
+// lime hairline across the top of the panel
+.nav-sub:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), transparent);
+}
+
+// an invisible bridge, so the pointer can travel from the link to the panel
+.nav-sub:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 34px;
+}
+
+.nav-sub > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: var(--ink) !important;
+  font-family: var(--heading);
+  font-size: 1.12rem;
+  line-height: 1.2;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+// arrow that slides in on hover
+.nav-sub > a:after {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 1.75px solid currentColor;
+  border-right: 1.75px solid currentColor;
+  opacity: 0;
+  transform: translateX(-6px) rotate(45deg);
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease);
+}
+
+.nav-sub > a:hover,
+.nav-sub > a:focus-visible,
+.nav-sub > a[aria-current] {
+  background: var(--accent-soft);
+  color: var(--primary-strong) !important;
+}
+
+[data-dark="true"] .nav-sub > a:hover,
+[data-dark="true"] .nav-sub > a:focus-visible,
+[data-dark="true"] .nav-sub > a[aria-current] {
+  color: var(--primary) !important;
+}
+
+.nav-sub > a:hover:after,
+.nav-sub > a:focus-visible:after {
+  opacity: 1;
+  transform: translateX(0) rotate(45deg);
+}
+
+@media (min-width: #{$collapse + 1px}) {
+  .nav-group:hover > .nav-sub,
+  .nav-group:focus-within > .nav-sub,
+  .nav-group.is-open > .nav-sub {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .nav-group:hover .nav-caret,
+  .nav-group:focus-within .nav-caret,
+  .nav-group.is-open .nav-caret {
+    margin-top: -1px;
+    transform: rotate(225deg);
+  }
+
+  // a mouse passing over Research on its way to another link doesn't flash
+  // the panel (keyboard focus still opens it at once)
+  @media (hover: hover) {
+    .nav-group:hover:not(:focus-within) > .nav-sub {
+      transition-delay: 0.12s;
+    }
+  }
+
+  // Escape closes the panel (see _scripts/effects.js)
+  .nav-group.is-closed > .nav-sub {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+  }
+
+  .nav-group.is-closed .nav-caret {
+    margin-top: -5px;
+    transform: rotate(45deg);
+  }
+}
+
+// thin reading-progress line along the bottom of the bar (article pages)
+.read-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+// menu button (phones)
+.nav-toggle {
+  display: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: var(--shadow-xs);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.nav-toggle:before,
+.nav-toggle:after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.3s var(--ease);
+}
+
+.nav-toggle:before {
+  top: 15px;
+  box-shadow: 0 6px 0 var(--ink);
+}
+
+.nav-toggle:after {
+  top: 27px;
+}
+
+.nav-toggle:checked:before {
+  box-shadow: none;
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle:checked:after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+// compact state once the page scrolls: the slim bar has scrolled away,
+// the place name tucks in and the lab name settles to the middle
+@media (min-width: #{$collapse + 1px}) {
+  html.is-scrolled .subtitle {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  html.is-scrolled .title {
+    transform: translateY(10px);
+  }
+}
+
+// mid-size windows (small laptops, tablets in landscape): same layout,
+// slightly smaller type so the lab name and the menu keep to one line
+@media (min-width: #{$collapse + 1px}) and (max-width: $compact) {
+  .home {
+    gap: 16px;
+  }
+
+  .logo {
+    height: 27px;
+  }
+
+  .title-text {
+    gap: 6px;
+    padding-left: 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  :is(.nav-main, .nav-group) > a {
+    padding: 10px 12px;
+    font-size: 1.04rem;
+  }
+
+  .nav-main {
+    margin-right: -12px;
+  }
+
+  .nav-group > a {
+    padding-right: 30px;
+  }
+
+  :is(.nav-main, .nav-group) > a:after {
+    left: 12px;
+    right: 12px;
+  }
+
+  .nav-group > a:after {
+    right: 30px;
+  }
+
+  .nav-caret {
+    right: 13px;
+  }
+
+  html.is-scrolled .title {
+    transform: translateY(9px);
+  }
+}
+
+// ------------------------------------------------------------------
+// light / dark switch at the top (the footer keeps its switch too): a round
+// moon / sun button at the end of the main bar on wide screens, and a
+// "Dark mode" row at the end of the menu on phones and tablets
+// ------------------------------------------------------------------
+
+.theme-button,
+.nav-theme {
+  display: none;
+}
+
+@media (min-width: #{$collapse + 1px}) {
+  .theme-button {
+    display: block;
+    position: relative;
+    z-index: 1;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: end;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: var(--card);
+    box-shadow: var(--shadow-xs);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+  }
+
+  // a moon switches to dark; in dark mode a sun switches back
+  .theme-button:after {
+    content: "\f186";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: var(--ink);
+    font-family: "Font Awesome 6 Free";
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .theme-button:checked:after {
+    content: "\f185";
+    color: #f2c94c;
+  }
+
+  .theme-button:hover {
+    border-color: var(--primary);
+    background: var(--background-alt);
+  }
+
+  .theme-button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
+  // the main links make room: the last one's text ends 18px before it
+  .nav-main {
+    margin-right: 42px;
+  }
+}
+
+@media (min-width: #{$collapse + 1px}) and (max-width: $compact) {
+  .theme-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-main {
+    margin-right: 38px;
+  }
+}
+
+// ------------------------------------------------------------------
+// phones and narrow windows
+// ------------------------------------------------------------------
+
+@media (max-width: $collapse) {
+  header.site-header {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    height: $bar-mobile;
+    padding: 0 14px 0 18px;
+  }
+
+  header.site-header:before {
+    display: none;
+  }
+
+  header.site-header:after {
+    inset: 0;
+  }
+
+  // the whole height of the bar takes a tap to the home page
+  .home {
+    align-self: stretch;
+    gap: 12px;
+  }
+
+  .logo {
+    height: 22px;
+  }
+
+  .title-text {
+    gap: 5px;
+    padding-left: 12px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    grid-template-rows: none;
+    justify-items: stretch;
+    // dvh: the height left by Safari's toolbars, so the last links stay reachable
+    max-height: calc(100vh - #{$bar-mobile});
+    max-height: calc(100dvh - #{$bar-mobile});
+    padding: 6px 22px 26px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-bottom: 1px solid var(--glass-line);
+    background: var(--glass-strong);
+    -webkit-backdrop-filter: saturate(1.8) blur(18px);
+    backdrop-filter: saturate(1.8) blur(18px);
+    box-shadow: 0 24px 40px -24px rgba(10, 30, 16, 0.4);
+  }
+
+  .nav-toggle:checked + nav {
+    display: grid;
+  }
+
+  .nav-main,
+  .nav-more {
+    grid-row: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-right: 0;
+  }
+
+  .nav-more {
+    margin-top: 10px;
+  }
+
+  .nav-main > a:last-child {
+    border-bottom-color: var(--line-strong);
+  }
+
+  :is(.nav-main, .nav-group) > a,
+  .nav-more > a {
+    padding: 12px 2px;
+    text-align: left;
+  }
+
+  :is(.nav-main, .nav-group) > a {
+    border-bottom: 1px solid var(--line);
+    font-family: var(--heading);
+    font-size: 1.32rem;
+    font-weight: var(--regular);
+  }
+
+  // the research areas are listed right under Research
+  .nav-group > a {
+    border-bottom: 0;
+    padding-bottom: 6px;
+  }
+
+  .nav-group {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-caret {
+    display: none;
+  }
+
+  .nav-sub {
+    position: static;
+    min-width: 0;
+    margin-left: 2px;
+    padding: 0 0 0 14px;
+    border: 0;
+    border-left: 2px solid var(--line-strong);
+    border-radius: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .nav-sub:before,
+  .nav-sub:after {
+    display: none;
+  }
+
+  // (44px rows, a comfortable tap target)
+  .nav-sub > a {
+    min-height: 44px;
+    padding: 11px 12px;
+    color: var(--muted) !important;
+    font-family: var(--body);
+    font-size: 1.02rem;
+  }
+
+  .nav-more > a {
+    color: var(--muted) !important;
+    font-size: 0.98rem;
+    letter-spacing: 0;
+  }
+
+  .nav-more > a:hover,
+  .nav-more > a[aria-current] {
+    color: var(--primary-strong) !important;
+  }
+
+  [data-dark="true"] .nav-more > a:hover,
+  [data-dark="true"] .nav-more > a[aria-current] {
+    color: var(--primary) !important;
+  }
+
+  :is(.nav-main, .nav-group) > a:after,
+  .nav-more > a:after {
+    display: none;
+  }
+
+  :is(.nav-main, .nav-group) > a[aria-current]:before,
+  .nav-more > a[aria-current]:before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 50%;
+    width: 4px;
+    height: 22px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+    transform: translateY(-50%);
+  }
+}
+
+// the light / dark row at the end of the phone and tablet menu, with the
+// footer's pill switch recolored for the light menu
+@media (max-width: $collapse) {
+  .nav-theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 14px 2px 2px;
+    border-top: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: var(--semi-bold);
+    cursor: pointer;
+  }
+
+  .nav-theme .dark-toggle:not(:checked) {
+    border-color: var(--line-strong);
+    background: var(--background-alt);
+  }
+
+  .nav-theme .dark-toggle:not(:checked):hover {
+    border-color: var(--primary);
+  }
+
+  .nav-theme .dark-toggle:focus-visible {
+    outline-color: var(--primary);
+  }
+}
+
+// tablets held upright: the brand at the size of the small-laptop step, and
+// the menu as a frosted card hanging under its button (phones turned
+// sideways keep the phone bar)
+@media (min-width: 521px) and (max-width: $collapse) and (min-height: 600px) {
+  header.site-header {
+    --side: 22px;
+    height: $bar-tablet;
+    padding: 0 var(--side);
+  }
+
+  .home {
+    gap: 16px;
+  }
+
+  .logo {
+    height: 27px;
+  }
+
+  .title-text {
+    gap: 6px;
+    padding-left: 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  nav {
+    left: auto;
+    right: var(--side);
+    width: min(380px, calc(100% - 2 * var(--side)));
+    max-height: calc(100vh - #{$bar-tablet});
+    max-height: calc(100dvh - #{$bar-tablet});
+    border: 1px solid var(--glass-line);
+    border-top: 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// (the brand and the menu button line up with the page content)
+@media (min-width: 701px) and (max-width: $collapse) and (min-height: 600px) {
+  header.site-header {
+    --side: 40px;
+  }
+}
+
+// the lab name alone is clearer than a two-line place name on small phones
+// (the Caltech wordmark sits right beside it)
+@media (max-width: 520px) {
+  .subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .logo {
+    height: 19px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}

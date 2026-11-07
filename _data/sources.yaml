@@ -1,0 +1,541 @@
+# Sources for the Publications page (publications/index.md) and the research pages.
+#
+# The cite process (_cite/cite.py) runs Manubot on every entry with an "id" and writes
+# _data/citations.yaml. Fields set here override Manubot's.
+#   group: caltech | prior        section of the Publications page (patents use type: patent)
+#   tags:  nanotechnology | genetic-engineering | rhizosphere
+#          "Related publications" on the matching research page
+#   authors: on Manubot (id) entries, only set where the old site marked authors, to
+#          keep the markers. The list is Manubot's, with \* (equal contribution, escaped
+#          because author names are rendered as Markdown) or ‡ (co-corresponding author)
+#          appended. Re-check these lists if a paper's metadata changes.
+#   publisher: bioRxiv is set by hand on the preprints, because their DOI metadata names
+#          openRxiv or a bioRxiv subject area (for example Bioengineering) instead.
+# Entries without an id are manual citations (title, authors, publisher, date, link).
+
+# ----------------------------------------------------------------------------
+# At Caltech
+# ----------------------------------------------------------------------------
+
+# Legendre et al. 2026, Nature Nanotechnology (in press; no DOI yet, link is the bioRxiv preprint given on the Nanotechnology page)
+- type: paper
+  group: caltech
+  tags: [nanotechnology]
+  title: "An extracellular contractile injection system for receptor-mediated protein delivery into plant cells"
+  authors:
+    - "Legendre MG."
+    - "Muchenje K."
+    - "Heredia A."
+    - "Colee C."
+    - "Wang Y."
+    - "Pistilli V."
+    - "Demirer GS‡"
+  publisher: "Nature Nanotechnology (In press)"
+  date: 2026-12-31  # placeholder day, sets the order shown on the old site (only the year is displayed)
+  link: "https://www.biorxiv.org/content/10.1101/2025.08.22.671880v2"
+
+# Muchenje et al. 2026, Nature Biotechnology
+- id: doi:10.1038/s41587-026-03197-y
+  type: paper
+  group: caltech
+  tags: [genetic-engineering]
+  authors:
+    - "Kimberley T. Muchenje"
+    - "Carl L. McCombe"
+    - "Yunqing Wang"
+    - "Tufan M. Oz"
+    - "Eugene Li"
+    - "Amelia Saffron"
+    - "Gozde S. Demirer‡"
+
+# Wang et al. 2026, bioRxiv
+- id: doi:10.64898/2026.07.15.738807
+  type: preprint
+  group: caltech
+  tags: [genetic-engineering]
+  publisher: "bioRxiv"
+  authors:
+    - "Yunqing Wang"
+    - "Kimberley T. Muchenje"
+    - "Ashot Papikian"
+    - "Mark G. Legendre"
+    - "Esther Leem"
+    - "Gozde S. Demirer‡"
+
+# Li et al. 2026, PNAS
+- id: doi:10.1073/pnas.2609666123
+  type: paper
+  group: caltech
+  tags: [rhizosphere]
+  authors:
+    - "Eugene Li"
+    - "Chiara Berruto"
+    - "Tufan M. Oz"
+    - "Elisa Grillo"
+    - "Catherine Griffin"
+    - "Yunqing Wang"
+    - "Kimberley T. Muchenje"
+    - "Jolie W. Jones"
+    - "Gozde S. Demirer‡"
+
+# Wang et al. 2026, bioRxiv (the old Wix site titled it "Plant Sensors for Detection of Belowground
+# Soil Microbial Activity"; the citation shows the title registered for this DOI)
+- id: doi:10.64898/2026.03.23.713735
+  type: preprint
+  group: caltech
+  tags: [rhizosphere]
+  publisher: "bioRxiv"
+  authors:
+    - "Yunqing Wang"
+    - "John P. Marken"
+    - "Eugene Li"
+    - "Paul T. Tarr"
+    - "Elliot M. Meyerowitz"
+    - "Gozde S. Demirer‡"
+
+# McCombe and Demirer 2026, npj Science of Plants
+- id: doi:10.1038/s44383-025-00018-0
+  type: paper
+  group: caltech
+  tags: [rhizosphere]
+  authors:
+    - "Carl L. McCombe"
+    - "Gozde S. Demirer‡"
+
+# Li et al. 2026, ACS Synthetic Biology
+- id: doi:10.1021/acssynbio.5c00855
+  type: paper
+  group: caltech
+  tags: [nanotechnology]
+  authors:
+    - "Eugene Li\\*"
+    - "Yuan Geng\\*"
+    - "Tuyako R. Khristoforova"
+    - "Yunqing Wang"
+    - "Jolie W. Jones"
+    - "Kimberley T. Muchenje"
+    - "Elisa Grillo"
+    - "Hao Zhang"
+    - "Robert J. Schmitz"
+    - "Gozde S. Demirer‡"
+
+# Berruto et al. 2026, Journal of Bacteriology
+- id: doi:10.1128/jb.00384-25
+  type: paper
+  group: caltech
+  tags: [rhizosphere]
+  authors:
+    - "Chiara Berruto"
+    - "Elisa Grillo"
+    - "Shrila Esturi"
+    - "Gozde S. Demirer‡"
+
+# Abu-Remaileh et al. 2025, Nature Reviews Molecular Cell Biology
+- id: doi:10.1038/s41580-025-00892-7
+  type: paper
+  group: caltech
+
+# Bian et al. 2025, The Plant Cell (published version of the 2023 bioRxiv preprint listed under prior)
+- id: doi:10.1093/plcell/koaf124
+  type: paper
+  group: caltech
+  authors:
+    - "Chao Bian\\*"
+    - "Gozde S Demirer\\*"
+    - "M Tufan Oz\\*"
+    - "Yao-Min Cai"
+    - "Sam Witham"
+    - "G Alex Mason"
+    - "Zhengao Di"
+    - "Florian Deligne"
+    - "Ping Zhang"
+    - "Rachel Shen"
+    - "Allison Gaudinier"
+    - "Siobhan M Brady"
+    - "Nicola J Patron"
+
+# Legendre et al. 2024, Trends in Chemistry
+- id: doi:10.1016/j.trechm.2024.06.004
+  type: paper
+  group: caltech
+  tags: [nanotechnology]
+  authors:
+    - "Mark G. Legendre"
+    - "Virginia H. Pistilli"
+    - "Gozde S. Demirer‡"
+
+# Griffin et al. 2024, Current Opinion in Biotechnology
+- id: doi:10.1016/j.copbio.2024.103150
+  type: paper
+  group: caltech
+  tags: [rhizosphere]
+  authors:
+    - "Catherine Griffin"
+    - "M. Tufan Oz"
+    - "Gozde S. Demirer‡"
+
+# Berruto and Demirer 2024, Trends in Microbiology
+- id: doi:10.1016/j.tim.2024.02.003
+  type: paper
+  group: caltech
+  tags: [rhizosphere]
+  authors:
+    - "Chiara A. Berruto"
+    - "Gozde S. Demirer‡"
+
+# Krasley et al. 2024, Chemical Reviews
+- id: doi:10.1021/acs.chemrev.3c00581
+  type: paper
+  group: caltech
+  tags: [nanotechnology]
+  authors:
+    - "Andrew T. Krasley\\*"
+    - "Eugene Li\\*"
+    - "Jesus M. Galeana"
+    - "Chandima Bulumulla"
+    - "Abraham G. Beyene‡"
+    - "Gozde S. Demirer‡"
+
+# Lowry et al. 2024, Nature Nanotechnology
+- id: doi:10.1038/s41565-024-01667-5
+  type: paper
+  group: caltech
+  authors:
+    - "Gregory V. Lowry\\*"
+    - "Juan Pablo Giraldo\\*"
+    - "Nicole F. Steinmetz\\*"
+    - "Astrid Avellan"
+    - "Gozde S. Demirer"
+    - "Kurt D. Ristroph"
+    - "Gerald J. Wang"
+    - "Christine O. Hendren"
+    - "Christopher A. Alabi"
+    - "Adam Caparco"
+    - "Washington da Silva"
+    - "Ivonne González-Gamboa"
+    - "Khara D. Grieger"
+    - "Su-Ji Jeon"
+    - "Mariya V. Khodakovskaya"
+    - "Hagay Kohay"
+    - "Vivek Kumar"
+    - "Raja Muthuramalingam"
+    - "Hanna Poffenbarger"
+    - "Swadeshmukul Santra"
+    - "Robert D. Tilton"
+    - "Jason C. White"
+
+# Demirer et al. 2023, New Phytologist (listed under both At Caltech and Prior to Caltech on Wix, kept once)
+- id: doi:10.1111/nph.19007
+  type: paper
+  group: caltech
+  authors:
+    - "Gozde S. Demirer\\*"
+    - "Donald J. Gibson\\*"
+    - "Xiaoyan Yue"
+    - "Kelly Pan"
+    - "Eshel Elishav"
+    - "Hitaishi Khandal"
+    - "Guy Horev"
+    - "Danuše Tarkowská"
+    - "Alex Cantó‐Pastor"
+    - "Shuyao Kong"
+    - "Concepcion Manzano"
+    - "Julin N. Maloof"
+    - "Sigal Savaldi‐Goldstein"
+    - "Siobhan M. Brady"
+
+# Wang and Demirer 2023, Trends in Biotechnology
+- id: doi:10.1016/j.tibtech.2023.03.007
+  type: paper
+  group: caltech
+  tags: [genetic-engineering]
+  authors:
+    - "Yunqing Wang"
+    - "Gozde S. Demirer‡"
+
+# Demirer 2023, Nature Reviews Methods Primers
+- id: doi:10.1038/s43586-023-00213-2
+  type: paper
+  group: caltech
+  authors:
+    - "Gozde S. Demirer‡"
+
+# Legendre and Demirer 2023, Trends in Biotechnology (Wix says 2022)
+- id: doi:10.1016/j.tibtech.2022.12.002
+  type: paper
+  group: caltech
+  authors:
+    - "Mark Legendre"
+    - "Gozde S. Demirer‡"
+
+# Rustgi et al. 2022, Frontiers in Genome Editing
+- id: doi:10.3389/fgeed.2022.1011934
+  type: paper
+  group: caltech
+  authors:
+    - "Sachin Rustgi‡"
+    - "Salman Naveed"
+    - "Jonathan Windham"
+    - "Huan Zhang"
+    - "Gözde S. Demirer‡"
+
+# ----------------------------------------------------------------------------
+# Prior to Caltech
+# ----------------------------------------------------------------------------
+
+# Bian et al. 2023, bioRxiv (preprint of the 2025 Plant Cell paper listed under At Caltech)
+- id: doi:10.1101/2023.07.17.549299
+  type: preprint
+  group: prior
+  publisher: "bioRxiv"
+
+# Park et al. 2022, Current Opinion in Biotechnology
+- id: doi:10.1016/j.copbio.2022.102692
+  type: paper
+  group: prior
+
+# Ali et al. 2022, ACS Applied Nano Materials
+- id: doi:10.1021/acsanm.1c03482
+  type: paper
+  group: prior
+
+# Zhang et al. 2021, Nature Nanotechnology
+- id: doi:10.1038/s41565-021-01018-8
+  type: paper
+  group: prior
+  description: "[Highlighted in Nature Materials (2021), C. Horejs](https://www.nature.com/articles/s41578-021-00403-y)"
+
+# González-Grandío et al. 2021, Journal of Nanobiotechnology
+- id: doi:10.1186/s12951-021-01178-8
+  type: paper
+  group: prior
+
+# González-Grandío et al. 2021, ACS Synthetic Biology
+- id: doi:10.1021/acssynbio.1c00248
+  type: paper
+  group: prior
+
+# Zhang et al. 2021, Nano Letters
+- id: doi:10.1021/acs.nanolett.1c01792
+  type: paper
+  group: prior
+  authors:
+    - "Huan Zhang\\*"
+    - "Yuhong Cao\\*"
+    - "Dawei Xu"
+    - "Natalie S. Goh"
+    - "Gozde S. Demirer"
+    - "Stefano Cestellos-Blanco"
+    - "Yuan Chen"
+    - "Markita P. Landry"
+    - "Peidong Yang"
+
+# Demirer et al. 2021, Nature Nanotechnology
+- id: doi:10.1038/s41565-021-00854-y
+  type: paper
+  group: prior
+  authors:
+    - "Gozde S. Demirer‡"
+    - "Tallyta N. Silva"
+    - "Christopher T. Jackson"
+    - "Jason B. Thomas"
+    - "David W. Ehrhardt"
+    - "Seung Y. Rhee"
+    - "Jenny C. Mortimer"
+    - "Markita P. Landry‡"
+
+# Demirer and Landry 2021, Bio-protocol (DOI found via Crossref; Wix linked bio-protocol.org/e3897)
+- id: doi:10.21769/bioprotoc.3897
+  type: paper
+  group: prior
+  authors:
+    - "Gozde Demirer‡"
+    - "Markita Landry‡"
+
+# Zhang et al. 2020, Nature Protocols
+- id: doi:10.1038/s41596-020-0370-0
+  type: paper
+  group: prior
+
+# Demirer et al. 2020, Science Advances
+- id: doi:10.1126/sciadv.aaz0495
+  type: paper
+  group: prior
+
+# Demirer et al. 2019, Nature Protocols
+- id: doi:10.1038/s41596-019-0208-9
+  type: paper
+  group: prior
+
+# Wang et al. 2019, Molecular Plant
+- id: doi:10.1016/j.molp.2019.06.010
+  type: paper
+  group: prior
+
+# Zhang et al. 2019, PNAS (Wix lists Demirer first; Crossref lists Huan Zhang first)
+- id: doi:10.1073/pnas.1818290116
+  type: paper
+  group: prior
+  authors:
+    - "Huan Zhang\\*"
+    - "Gozde S. Demirer\\*"
+    - "Honglu Zhang"
+    - "Tianzheng Ye"
+    - "Natalie S. Goh"
+    - "Abhishek J. Aditham"
+    - "Francis J. Cunningham"
+    - "Chunhai Fan"
+    - "Markita P. Landry"
+
+# Demirer et al. 2019, Nature Nanotechnology
+- id: doi:10.1038/s41565-019-0382-5
+  type: paper
+  group: prior
+  description: "Interview and highlighted on NPR, popular mechanics, and C&E news"
+
+# Demirer et al. 2018, Methods in Molecular Biology (no DOI found with matching title and year; no link on Wix)
+- type: paper
+  group: prior
+  title: "Nano-biolistics: A novel plant genetic transformation approach"
+  authors:
+    - "Demirer G.S.\\*"
+    - "Goh N.S. \\*"
+    - "Cunningham F.J. \\*"
+    - "Zhang H. \\*"
+    - "Landry M.P."
+  publisher: "Methods in Molecular Biology"
+  date: 2018-12-01  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+# Cunningham et al. 2018, Trends in Biotechnology
+- id: doi:10.1016/j.tibtech.2018.03.009
+  type: paper
+  group: prior
+  authors:
+    - "Francis J. Cunningham\\*"
+    - "Natalie S. Goh\\*"
+    - "Gozde S. Demirer"
+    - "Juliana L. Matos"
+    - "Markita P. Landry"
+
+# Demirer and Landry 2017, Chemical Engineering Progress (no DOI found; link as on Wix)
+- type: paper
+  group: prior
+  title: "Delivering Genes to Plants"
+  authors:
+    - "Demirer G.S."
+    - "Landry M.P."
+  publisher: "Chemical Engineering Progress"
+  date: 2017-12-01  # placeholder day, sets the order shown on the old site (only the year is displayed)
+  link: "https://escholarship.org/uc/item/2hp0j2g2"
+
+# Del Bonis-O'Donnell et al. 2017, Journal of Visualized Experiments
+- id: doi:10.3791/55030
+  type: paper
+  group: prior
+
+# Beyene et al. 2016, Current Protocols in Chemical Biology (Wix lists Demirer first; Crossref lists Beyene first)
+- id: doi:10.1002/cpch.10
+  type: paper
+  group: prior
+  authors:
+    - "Abraham G. Beyene\\*"
+    - "Gozde S. Demirer\\*"
+    - "Markita P. Landry"
+
+# Demirer et al. 2015, Journal of Materials Chemistry B
+- id: doi:10.1039/c5tb00931f
+  type: paper
+  group: prior
+
+# Nazli et al. 2014, Colloids and Surfaces B: Biointerfaces
+- id: doi:10.1016/j.colsurfb.2014.07.049
+  type: paper
+  group: prior
+
+# ----------------------------------------------------------------------------
+# Patents/Invention Disclosures (manual entries; title, inventors and status text as on the old site.
+# Dates are placeholders: day 01 for month-only dates, 01-01 for year-only dates, and the earliest
+# date where an entry gives two)
+# ----------------------------------------------------------------------------
+
+- type: patent
+  title: "Optimized R2 Retroelement Complexes Enable Precise and Efficient DNA Insertion into Plant Genomes"
+  authors:
+    - "Demirer GS."
+    - "Muchenje K."
+  publisher: "Provisional patent filed, October 2025, CIT-9388-P"
+  date: 2025-10-04  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+- type: patent
+  title: "A 3D-Printed Capillary Tube Holder for High-Throughput Chemotaxis Assays"
+  authors:
+    - "Demirer GS."
+    - "Berruto C."
+  publisher: "Provisional patent filed, October 2025, CIT-9387-P"
+  date: 2025-10-03  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+- type: patent
+  title: "Extracellular Contractile Injection Systems for High Efficiency Protein Delivery to Plants"
+  authors:
+    - "Demirer GS."
+    - "Legendre M."
+  publisher: "Provisional patent filed, October 2025, CIT-9390-P"
+  date: 2025-10-02  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+- type: patent
+  title: "Vacuum and Sonication Treatment Enables Efficient Transient Gene Expression in Various Monocot and Eudicot Plant Seedlings"
+  authors:
+    - "Demirer GS."
+    - "Li E."
+  publisher: "Provisional patent filed, October 2025, CIT-9393-P"
+  date: 2025-10-01
+
+- type: patent
+  title: "Targeted DNA Integration in Plants by CRISPR-Associated Transposases"
+  authors:
+    - "Demirer GS."
+    - "Wang Y."
+    - "Muchenje K."
+  publisher: "Provisional patent filed, CIT-9134-P. Patent filed, February 2025. U.S. Patent Application No. 30KJ-810004"
+  date: 2025-02-01
+
+- type: patent
+  title: "Engineering Biofilm-Based Bioinoculants for Climate-Resilient Crops"
+  authors:
+    - "Demirer GS."
+    - "Griffin C."
+  publisher: "Provisional patent filed, CIT-9249-P, December 2024. Refiled in December 2025"
+  date: 2024-12-02  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+- type: patent
+  title: "Identification of Chemical Targets for The Selective Enrichment of Desirable Bacteria"
+  authors:
+    - "Demirer GS."
+    - "Berruto C."
+  publisher: "Provisional patent filed, CIT-9109-P. Patent filed, December 2024. U.S. Patent Application No. 18/972,482"
+  date: 2024-12-01
+
+- type: patent
+  title: "Genetically Encoded Delivery Vehicles for Plant Genetic Engineering"
+  authors:
+    - "Demirer GS."
+    - "Legendre M."
+  publisher: "Provisional patent filed, CIT-9054-P, filed August 2023"
+  date: 2023-08-01
+
+- type: patent
+  title: "Mature plant transfection using carbon nanotubes"
+  authors:
+    - "Landry MP."
+    - "Demirer GS."
+  publisher: "International Patent App. 62/500450, 2017. US Patent App. 16/672459, 2020"
+  date: 2020-01-01  # placeholder day, sets the order shown on the old site (only the year is displayed)
+
+- type: patent
+  title: "Gene Silencing in Plants with DNA Origami Nanostructures"
+  authors:
+    - "Landry MP."
+    - "Zhang H."
+    - "Demirer GS."
+  publisher: "Invention disclosure BK-2019-044, filed September 2018"
+  date: 2018-09-01

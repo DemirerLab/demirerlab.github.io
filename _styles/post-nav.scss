@@ -1,0 +1,89 @@
+---
+---
+
+$wrap: 600px;
+
+.post-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  max-width: var(--list);
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: var(--bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-nav > span {
+  display: block;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.post-nav > span:has(a) {
+  padding: 20px 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--card);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.4s var(--ease), border-color var(--transition);
+}
+
+.post-nav > span:has(a):hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.post-nav > :first-child {
+  text-align: left;
+}
+
+.post-nav > :last-child {
+  text-align: right;
+}
+
+.post-nav a {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.12rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.post-nav a:hover {
+  color: var(--primary-strong);
+}
+
+[data-dark="true"] .post-nav a:hover {
+  color: var(--primary);
+}
+
+.post-nav .icon {
+  color: var(--primary);
+}
+
+.post-nav > :first-child .icon {
+  margin-right: 0.5em;
+}
+
+.post-nav > :last-child .icon {
+  margin-left: 0.5em;
+}
+
+@media (max-width: $wrap) {
+  .post-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .post-nav > * {
+    text-align: left !important;
+  }
+}

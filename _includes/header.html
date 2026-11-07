@@ -1,0 +1,139 @@
+{% assign image = page.header | default: site.header %}
+{% assign dark = page.header-dark | is_nil: site.header-dark | is_nil: true %}
+
+{% assign svg = "images/logo.svg" | file_exists %}
+{% assign png = "images/logo.png" | file_exists %}
+{% assign jpg = "images/logo.jpg" | file_exists %}
+{% assign logo = svg | default: png | default: jpg | default: nil %}
+
+{% comment %}
+  the first few nav pages (by nav order) form the main menu; the rest sit in
+  the slim bar above it on wide screens (all of them share one menu on phones).
+  a link is aria-current "page" on its own page and "true" on pages below it.
+  the Caltech wordmark is hidden from screen readers, which hear the lab name
+  and place name instead.
+{% endcomment %}
+{% assign main_count = 4 %}
+{% assign current = page.url %}
+
+<header
+  class="background site-header"
+  style="--image: url('{{ image | relative_url | uri_escape }}')"
+  {% if dark == true or dark == false %}
+    data-dark="{{ dark }}"
+  {% endif %}
+>
+  <a href="{{ "/" | relative_url }}" class="home">
+    {% if logo %}
+      <span class="logo" aria-hidden="true">
+        {% if svg %}
+          {{ svg | file_read }}
+        {% else %}
+          <img src="{{ logo | relative_url | uri_escape }}" alt="logo">
+        {% endif %}
+      </span>
+    {% endif %}
+    {% if site.logo-text != false %}
+      <span class="title-text" data-tooltip="Home">
+        {% if site.title and site.show-title != false %}
+          <span class="title">{{ site.title }}</span>
+        {% endif %}
+        {% if site.subtitle and site.show-subtitle != false %}
+          <span class="subtitle">{{ site.subtitle }}</span>
+        {% endif %}
+      </span>
+    {% endif %}
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav" autocomplete="off">
+
+  <nav>
+    {% assign pages = site.pages
+      | where_exp: "page", "page.nav"
+      | sort: "nav.order"
+    %}
+    <div class="nav-main">
+      {% for item in pages limit: main_count %}
+        {% comment %}
+          a main page's own sub-pages (e.g. the research areas under
+          research/) open as a dropdown on wide screens and are listed
+          under it in the phone menu; menu-order in their front matter
+          sets the order
+        {% endcomment %}
+        {% assign children = site.pages
+          | where_exp: "child", "child.title and child.dir != item.dir and child.dir contains item.dir"
+          | sort: "menu-order", "last"
+        %}
+        {% if children.size > 0 %}
+          <div class="nav-group">
+            <a
+              href="{{ item.dir | relative_url | uri_escape }}"
+              {% if current contains item.dir %}
+                aria-current="{% if current == item.url %}page{% else %}true{% endif %}"
+              {% endif %}
+            >
+              {{ item.title }}<span class="nav-caret" aria-hidden="true"></span>
+            </a>
+            <div class="nav-sub">
+              {% for child in children %}
+                <a
+                  href="{{ child.dir | relative_url | uri_escape }}"
+                  {% if current == child.url %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  {{ child.title }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a
+            href="{{ item.dir | relative_url | uri_escape }}"
+            data-tooltip="{{ item.nav.tooltip | xml_escape }}"
+            {% if current contains item.dir %}
+              aria-current="{% if current == item.url %}page{% else %}true{% endif %}"
+            {% endif %}
+          >
+            {{ item.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="nav-more">
+      {% for item in pages offset: main_count %}
+        <a
+          href="{{ item.dir | relative_url | uri_escape }}"
+          data-tooltip="{{ item.nav.tooltip | xml_escape }}"
+          {% if current contains item.dir %}
+            aria-current="{% if current == item.url %}page{% else %}true{% endif %}"
+          {% endif %}
+        >
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </div>
+    {% comment %} light / dark switch in the phone and tablet menu {% endcomment %}
+    <label class="nav-theme">
+      <span>Dark mode</span>
+      <input
+        type="checkbox"
+        class="dark-toggle"
+        role="switch"
+        autocomplete="off"
+        oninput="onDarkToggleChange(event)"
+      >
+    </label>
+  </nav>
+
+  {% comment %} light / dark switch at the end of the main bar on wide screens {% endcomment %}
+  <input
+    type="checkbox"
+    class="theme-button"
+    role="switch"
+    aria-label="Dark mode"
+    data-tooltip="Dark mode"
+    autocomplete="off"
+    oninput="onDarkToggleChange(event)"
+  >
+</header>

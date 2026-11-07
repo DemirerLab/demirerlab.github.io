@@ -1,0 +1,11 @@
+---
+---
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  // decorative glows and heading-link icons never widen the page; clip (not
+  // hidden) creates no scroll container, so sticky elements keep working
+  overflow-x: clip;
+}

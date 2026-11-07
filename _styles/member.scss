@@ -1,0 +1,217 @@
+---
+---
+
+// member pages: a profile card beside the bio
+
+$wrap: 860px;
+
+body[data-layout="member"] main > section:first-child {
+  background:
+    radial-gradient(50% 360px at 10% 0%, rgba(168, 209, 79, 0.2), rgba(168, 209, 79, 0) 100%),
+    linear-gradient(180deg, var(--background-alt) 0, var(--background) 380px);
+}
+
+[data-dark="true"] body[data-layout="member"] main > section:first-child {
+  background:
+    radial-gradient(50% 360px at 10% 0%, rgba(150, 200, 70, 0.1), rgba(150, 200, 70, 0) 100%),
+    linear-gradient(180deg, var(--background-alt) 0, var(--background) 380px);
+}
+
+.member-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(36px, 5vw, 72px);
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.member-card {
+  position: sticky;
+  top: 104px;
+  padding: 34px 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--card);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.member-card .portrait {
+  --size: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.member-card .portrait-name {
+  font-size: 1.45rem;
+}
+
+// the name and description use the card's full width, under a centered photo
+.member-card .portrait {
+  width: 100%;
+}
+
+.member-card .portrait-image {
+  width: var(--size);
+}
+
+.member-card .portrait .icon {
+  left: calc(50% + var(--size) * 0.24);
+}
+
+.member-links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.member-links .button[data-style="bare"] {
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: var(--semi-bold);
+}
+
+.member-links .button[data-style="bare"] .icon {
+  width: 1.25em;
+  color: var(--primary);
+  text-align: center;
+}
+
+.member-links .button[data-style="bare"]:hover {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.member-body {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+// a bordered panel (awards) lines up with the card's top edge
+.member-body:has(> ul:first-child) {
+  padding-top: 0;
+}
+
+.member-body > :first-child {
+  margin-top: 0;
+}
+
+.member-body > p,
+.member-body > ul,
+.member-body > ol {
+  max-width: var(--measure);
+}
+
+// awards list as a tidy panel
+.member-body > ul {
+  margin: 0 0 32px;
+  padding: 20px 26px 20px 46px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--background-alt);
+}
+
+.member-body > ul > li {
+  margin: 0.3em 0;
+  color: var(--ink);
+}
+
+.member-search {
+  margin-top: 36px;
+  text-align: left !important;
+}
+
+// a pill on one line; a rounded box with even lines when it wraps
+.member-search a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.7em 1.25em;
+  border: 1px solid var(--line-strong);
+  border-radius: 1.6em;
+  text-wrap: balance;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease), background var(--transition), border-color var(--transition);
+}
+
+.member-search a:before {
+  content: "\f002";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.85em;
+}
+
+.member-search a:hover {
+  border-color: var(--primary);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+// a member without a bio: the card centered, the search link below it
+.member-layout:has(.member-body > .member-search:first-child) {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 28px;
+}
+
+.member-layout:has(.member-body > .member-search:first-child) .member-card {
+  position: static;
+  width: 300px;
+  max-width: 100%;
+}
+
+.member-layout:has(.member-body > .member-search:first-child) .member-body {
+  padding-top: 0;
+}
+
+.member-layout:has(.member-body > .member-search:first-child) .member-search {
+  margin-top: 0;
+  text-align: center !important;
+}
+
+@media (max-width: $wrap) {
+  .member-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .member-card {
+    position: static;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .member-search {
+    text-align: center !important;
+  }
+
+  // when the link wraps, the icon leads its first line
+  .member-search a {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .member-search a:before {
+    margin-right: 0.55em;
+  }
+}
+
+// small phones: a slimmer awards panel leaves the text a fuller line
+@media (max-width: 500px) {
+  .member-body > ul {
+    padding: 16px 16px 16px 34px;
+  }
+}

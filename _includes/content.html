@@ -1,0 +1,48 @@
+<!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+{% assign content = include.content %}
+
+{% assign sections = content | split: "<!-- section break -->" | array_filter %}
+
+{% for section in sections %}
+  {% assign dark = section
+    | regex_scan: "<dark>(.*?)</dark>"
+    | default: ""
+  %}
+  {% assign image = section
+    | regex_scan: "<background>(.*?)</background>"
+    | default: nil
+  %}
+  {% assign size = section
+    | regex_scan: "<size>(.*?)</size>"
+    | default: "page"
+  %}
+  {% assign position = section
+    | regex_scan: "<position>(.*?)</position>"
+    | default: ""
+  %}
+
+  {% comment %}
+    a section with a background image is a full-bleed banner (data-banner
+    is what the styles and effects key on); position optionally moves the
+    image's focal point, e.g. "50% 15%" to keep faces in a portrait photo
+  {% endcomment %}
+  <section
+    class="background"
+    data-size="{{ size }}"
+    {% if dark == "true" or dark == "false" %}
+      data-dark="{{ dark }}"
+    {% endif %}
+    {% if image %}
+      data-banner
+      style="--image: url('{{ image | relative_url | uri_escape }}'){% if position != "" %}; --image-position: {{ position | xml_escape }}{% endif %}"
+    {% endif %}
+  >
+    {{ section }}
+  </section>
+{% endfor %}

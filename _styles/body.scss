@@ -1,0 +1,38 @@
+---
+---
+
+html {
+  scroll-padding-top: 110px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  font-optical-sizing: auto;
+  text-align: center;
+  line-height: var(--compact);
+  text-rendering: optimizeLegibility;
+  // a long web address in plain text breaks rather than run off a phone screen
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+// visible keyboard focus everywhere
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

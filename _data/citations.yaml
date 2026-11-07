@@ -1,0 +1,846 @@
+# DO NOT EDIT, GENERATED AUTOMATICALLY
+
+- type: paper
+  group: caltech
+  tags:
+  - nanotechnology
+  title: An extracellular contractile injection system for receptor-mediated protein
+    delivery into plant cells
+  authors:
+  - Legendre MG.
+  - Muchenje K.
+  - Heredia A.
+  - Colee C.
+  - Wang Y.
+  - Pistilli V.
+  - "Demirer GS\u2021"
+  publisher: Nature Nanotechnology (In press)
+  date: '2026-12-31'
+  link: https://www.biorxiv.org/content/10.1101/2025.08.22.671880v2
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41587-026-03197-y
+  title: Optimized R2 retroelement complexes for DNA insertion into plant genomes
+  authors:
+  - Kimberley T. Muchenje
+  - Carl L. McCombe
+  - Yunqing Wang
+  - Tufan M. Oz
+  - Eugene Li
+  - Amelia Saffron
+  - "Gozde S. Demirer\u2021"
+  publisher: Nature Biotechnology
+  date: '2026-06-19'
+  link: https://doi.org/hb8gc7
+  type: paper
+  group: caltech
+  tags:
+  - genetic-engineering
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.64898/2026.07.15.738807
+  title: CRISPR-Associated Transposases Enable Programmable DNA Integration in Plants
+  authors:
+  - Yunqing Wang
+  - Kimberley T. Muchenje
+  - Ashot Papikian
+  - Mark G. Legendre
+  - Esther Leem
+  - "Gozde S. Demirer\u2021"
+  publisher: bioRxiv
+  date: '2026-07-16'
+  link: https://doi.org/hcq7b2
+  type: preprint
+  group: caltech
+  tags:
+  - genetic-engineering
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1073/pnas.2609666123
+  title: Sentinel plants enable quantitative monitoring of bioavailable nitrate in
+    soils and microbial environments
+  authors:
+  - Eugene Li
+  - Chiara Berruto
+  - Tufan M. Oz
+  - Elisa Grillo
+  - Catherine Griffin
+  - Yunqing Wang
+  - Kimberley T. Muchenje
+  - Jolie W. Jones
+  - "Gozde S. Demirer\u2021"
+  publisher: Proceedings of the National Academy of Sciences
+  date: '2026-07-23'
+  link: https://doi.org/hcq7b3
+  type: paper
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.64898/2026.03.23.713735
+  title: Sentinel Plants Enable Aboveground Detection of Belowground Soil Microbial
+    Activity
+  authors:
+  - Yunqing Wang
+  - John P. Marken
+  - Eugene Li
+  - Paul T. Tarr
+  - Elliot M. Meyerowitz
+  - "Gozde S. Demirer\u2021"
+  publisher: bioRxiv
+  date: '2026-03-24'
+  link: https://doi.org/hcq7b4
+  type: preprint
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s44383-025-00018-0
+  title: Fundamental and applied insights into peptide hormones linking nitrogen and
+    phosphate sensing to microbial interactions
+  authors:
+  - Carl L. McCombe
+  - "Gozde S. Demirer\u2021"
+  publisher: npj Science of Plants
+  date: '2026-04-01'
+  link: https://doi.org/hcq7b5
+  type: paper
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1021/acssynbio.5c00855
+  title: Vacuum and Sonication Treatment Enable Efficient Transient Gene Expression
+    in Various Monocot and Eudicot Plant Seedlings
+  authors:
+  - Eugene Li\*
+  - Yuan Geng\*
+  - Tuyako R. Khristoforova
+  - Yunqing Wang
+  - Jolie W. Jones
+  - Kimberley T. Muchenje
+  - Elisa Grillo
+  - Hao Zhang
+  - Robert J. Schmitz
+  - "Gozde S. Demirer\u2021"
+  publisher: ACS Synthetic Biology
+  date: '2026-03-22'
+  link: https://doi.org/hcq7b6
+  type: paper
+  group: caltech
+  tags:
+  - nanotechnology
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1128/jb.00384-25
+  title: A 3D-printed capillary tube holder for high-throughput chemotaxis assays
+  authors:
+  - Chiara Berruto
+  - Elisa Grillo
+  - Shrila Esturi
+  - "Gozde S. Demirer\u2021"
+  publisher: Journal of Bacteriology
+  date: '2026-01-22'
+  link: https://doi.org/hcq7b7
+  type: paper
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41580-025-00892-7
+  title: Visions of the future of molecular cell biology
+  authors:
+  - Monther Abu-Remaileh
+  - Chii Jou Chan
+  - Leilei Chen
+  - Gozde S. Demirer
+  - Ana Fiszbein
+  - Florian Jug
+  - Ana Victoria Lechuga-Vieco
+  - "Rapha\xEBlle Luisier"
+  - Julia Pagan
+  - Benjamin R. Sabari
+  - Sichen Shao
+  - Liming Sun
+  - "Jan J. \u017Bylicz"
+  publisher: Nature Reviews Molecular Cell Biology
+  date: '2025-09-22'
+  link: https://doi.org/g95864
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1093/plcell/koaf124
+  title: Conservation and divergence of regulatory architecture in nitrate-responsive
+    plant gene circuits
+  authors:
+  - Chao Bian\*
+  - Gozde S Demirer\*
+  - M Tufan Oz\*
+  - Yao-Min Cai
+  - Sam Witham
+  - G Alex Mason
+  - Zhengao Di
+  - Florian Deligne
+  - Ping Zhang
+  - Rachel Shen
+  - Allison Gaudinier
+  - Siobhan M Brady
+  - Nicola J Patron
+  publisher: The Plant Cell
+  date: '2025-05-22'
+  link: https://doi.org/hcq7b8
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.trechm.2024.06.004
+  title: Chemical conjugation innovations for protein nanoparticles
+  authors:
+  - Mark G. Legendre
+  - Virginia H. Pistilli
+  - "Gozde S. Demirer\u2021"
+  publisher: Trends in Chemistry
+  date: '2024-08-01'
+  link: https://doi.org/hcq7b9
+  type: paper
+  group: caltech
+  tags:
+  - nanotechnology
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.copbio.2024.103150
+  title: "Engineering plant\u2013microbe communication for plant nutrient use efficiency"
+  authors:
+  - Catherine Griffin
+  - M. Tufan Oz
+  - "Gozde S. Demirer\u2021"
+  publisher: Current Opinion in Biotechnology
+  date: '2024-08-01'
+  link: https://doi.org/hcq7cb
+  type: paper
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.tim.2024.02.003
+  title: Engineering agricultural soil microbiomes and predicting plant phenotypes
+  authors:
+  - Chiara A. Berruto
+  - "Gozde S. Demirer\u2021"
+  publisher: Trends in Microbiology
+  date: '2024-09-01'
+  link: https://doi.org/gt69qr
+  type: paper
+  group: caltech
+  tags:
+  - rhizosphere
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1021/acs.chemrev.3c00581
+  title: Carbon Nanomaterial Fluorescent Probes and Their Biological Applications
+  authors:
+  - Andrew T. Krasley\*
+  - Eugene Li\*
+  - Jesus M. Galeana
+  - Chandima Bulumulla
+  - "Abraham G. Beyene\u2021"
+  - "Gozde S. Demirer\u2021"
+  publisher: Chemical Reviews
+  date: '2024-03-13'
+  link: https://doi.org/g9q8mz
+  type: paper
+  group: caltech
+  tags:
+  - nanotechnology
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41565-024-01667-5
+  title: Towards realizing nano-enabled precision delivery in plants
+  authors:
+  - Gregory V. Lowry\*
+  - Juan Pablo Giraldo\*
+  - Nicole F. Steinmetz\*
+  - Astrid Avellan
+  - Gozde S. Demirer
+  - Kurt D. Ristroph
+  - Gerald J. Wang
+  - Christine O. Hendren
+  - Christopher A. Alabi
+  - Adam Caparco
+  - Washington da Silva
+  - "Ivonne Gonz\xE1lez-Gamboa"
+  - Khara D. Grieger
+  - Su-Ji Jeon
+  - Mariya V. Khodakovskaya
+  - Hagay Kohay
+  - Vivek Kumar
+  - Raja Muthuramalingam
+  - Hanna Poffenbarger
+  - Swadeshmukul Santra
+  - Robert D. Tilton
+  - Jason C. White
+  publisher: Nature Nanotechnology
+  date: '2024-06-06'
+  link: https://doi.org/g9hrd9
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1111/nph.19007
+  title: "Phosphate deprivation\u2010induced changes in tomato are mediated by an\
+    \ interaction between brassinosteroid signaling and zinc"
+  authors:
+  - Gozde S. Demirer\*
+  - Donald J. Gibson\*
+  - Xiaoyan Yue
+  - Kelly Pan
+  - Eshel Elishav
+  - Hitaishi Khandal
+  - Guy Horev
+  - "Danu\u0161e Tarkowsk\xE1"
+  - "Alex Cant\xF3\u2010Pastor"
+  - Shuyao Kong
+  - Concepcion Manzano
+  - Julin N. Maloof
+  - "Sigal Savaldi\u2010Goldstein"
+  - Siobhan M. Brady
+  publisher: New Phytologist
+  date: '2023-06-12'
+  link: https://doi.org/hcq7cc
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.tibtech.2023.03.007
+  title: Synthetic biology for plant genetic engineering and molecular farming
+  authors:
+  - Yunqing Wang
+  - "Gozde S. Demirer\u2021"
+  publisher: Trends in Biotechnology
+  date: '2023-09-01'
+  link: https://doi.org/hcq7cd
+  type: paper
+  group: caltech
+  tags:
+  - genetic-engineering
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s43586-023-00213-2
+  title: Detecting and quantifying nanoparticle-mediated biomolecule delivery in plants
+  authors:
+  - "Gozde S. Demirer\u2021"
+  publisher: Nature Reviews Methods Primers
+  date: '2023-04-06'
+  link: https://doi.org/hcq7cf
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.tibtech.2022.12.002
+  title: Improving crop genetic transformation to feed the world
+  authors:
+  - Mark Legendre
+  - "Gozde S. Demirer\u2021"
+  publisher: Trends in Biotechnology
+  date: '2023-03-01'
+  link: https://doi.org/hcq7cg
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.3389/fgeed.2022.1011934
+  title: Plant biomacromolecule delivery methods in the 21st century
+  authors:
+  - "Sachin Rustgi\u2021"
+  - Salman Naveed
+  - Jonathan Windham
+  - Huan Zhang
+  - "G\xF6zde S. Demirer\u2021"
+  publisher: Frontiers in Genome Editing
+  date: '2022-10-14'
+  link: https://doi.org/gq8wgc
+  type: paper
+  group: caltech
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1101/2023.07.17.549299
+  title: Conservation and divergence of regulatory architecture in nitrate-responsive
+    plant gene circuits
+  authors:
+  - C Bian
+  - GS Demirer
+  - MT Oz
+  - Y Cai
+  - SS Witham
+  - GA Mason
+  - Z Di
+  - F Deligne
+  - P Zhang
+  - R Shen
+  - A Gaudinier
+  - SM Brady
+  - NJ Patron
+  publisher: bioRxiv
+  date: '2023-07-17'
+  link: https://doi.org/hcq7ch
+  type: preprint
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.copbio.2022.102692
+  title: Toolboxes for plant systems biology research
+  authors:
+  - Jihyun Park
+  - Gozde S Demirer
+  - Lily S Cheung
+  publisher: Current Opinion in Biotechnology
+  date: '2022-06-01'
+  link: https://doi.org/hcq7cj
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1021/acsanm.1c03482
+  title: "DNA\u2013Carbon Nanotube Binding Mode Determines the Efficiency of Carbon\
+    \ Nanotube-Mediated DNA Delivery to Intact Plants"
+  authors:
+  - Zahir Ali
+  - Maged F. Serag
+  - Gozde S. Demirer
+  - Bruno Torre
+  - Enzo di Fabrizio
+  - Markita P. Landry
+  - Satoshi Habuchi
+  - Magdy Mahfouz
+  publisher: ACS Applied Nano Materials
+  date: '2022-03-23'
+  link: https://doi.org/gsg92g
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41565-021-01018-8
+  title: Nanoparticle cellular internalization is not required for RNA delivery to
+    mature plant leaves
+  authors:
+  - Huan Zhang
+  - Natalie S. Goh
+  - Jeffrey W. Wang
+  - Rebecca L. Pinals
+  - "Eduardo Gonz\xE1lez-Grand\xEDo"
+  - Gozde S. Demirer
+  - Salwan Butrus
+  - Sirine C. Fakra
+  - Antonio Del Rio Flores
+  - Rui Zhai
+  - Bin Zhao
+  - So-Jung Park
+  - Markita P. Landry
+  publisher: Nature Nanotechnology
+  date: '2021-11-22'
+  link: https://doi.org/gpvk44
+  type: paper
+  group: prior
+  description: '[Highlighted in Nature Materials (2021), C. Horejs](https://www.nature.com/articles/s41578-021-00403-y)'
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1186/s12951-021-01178-8
+  title: Carbon nanotube biocompatibility in plants is determined by their surface
+    chemistry
+  authors:
+  - "Eduardo Gonz\xE1lez-Grand\xEDo"
+  - "G\xF6zde S. Demirer"
+  - Christopher T. Jackson
+  - Darwin Yang
+  - Sophia Ebert
+  - Kian Molawi
+  - Harald Keller
+  - Markita P. Landry
+  publisher: Journal of Nanobiotechnology
+  date: '2021-12-20'
+  link: https://doi.org/gsg985
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1021/acssynbio.1c00248
+  title: A Ratiometric Dual Color Luciferase Reporter for Fast Characterization of
+    Transcriptional Regulatory Elements in Plants
+  authors:
+  - "Eduardo Gonz\xE1lez-Grand\xEDo"
+  - Gozde S. Demirer
+  - Wenhe Ma
+  - Siobhan Brady
+  - Markita P. Landry
+  publisher: ACS Synthetic Biology
+  date: '2021-09-14'
+  link: https://doi.org/hwsz
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1021/acs.nanolett.1c01792
+  title: Gold-Nanocluster-Mediated Delivery of siRNA to Intact Plant Cells for Efficient
+    Gene Knockdown
+  authors:
+  - Huan Zhang\*
+  - Yuhong Cao\*
+  - Dawei Xu
+  - Natalie S. Goh
+  - Gozde S. Demirer
+  - Stefano Cestellos-Blanco
+  - Yuan Chen
+  - Markita P. Landry
+  - Peidong Yang
+  publisher: Nano Letters
+  date: '2021-06-21'
+  link: https://doi.org/gmbg64
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41565-021-00854-y
+  title: "Nanotechnology to advance CRISPR\u2013Cas genetic engineering of plants"
+  authors:
+  - "Gozde S. Demirer\u2021"
+  - Tallyta N. Silva
+  - Christopher T. Jackson
+  - Jason B. Thomas
+  - David W. Ehrhardt
+  - Seung Y. Rhee
+  - Jenny C. Mortimer
+  - "Markita P. Landry\u2021"
+  publisher: Nature Nanotechnology
+  date: '2021-03-01'
+  link: https://doi.org/gpb38h
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.21769/bioprotoc.3897
+  title: Efficient Transient Gene Knock-down in Tobacco Plants Using Carbon Nanocarriers
+  authors:
+  - "Gozde Demirer\u2021"
+  - "Markita Landry\u2021"
+  publisher: BIO-PROTOCOL
+  date: '2021-01-01'
+  link: https://doi.org/hcq7cp
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41596-020-0370-0
+  title: Engineering DNA nanostructures for siRNA delivery in plants
+  authors:
+  - Huan Zhang
+  - Honglu Zhang
+  - Gozde S. Demirer
+  - "Eduardo Gonz\xE1lez-Grand\xEDo"
+  - Chunhai Fan
+  - Markita P. Landry
+  publisher: Nature Protocols
+  date: '2020-08-17'
+  link: https://doi.org/gsg988
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1126/sciadv.aaz0495
+  title: Carbon nanocarriers deliver siRNA to intact plant cells for efficient gene
+    knockdown
+  authors:
+  - Gozde S. Demirer
+  - Huan Zhang
+  - Natalie S. Goh
+  - Rebecca L. Pinals
+  - Roger Chang
+  - Markita P. Landry
+  publisher: Science Advances
+  date: '2020-06-26'
+  link: https://doi.org/ghdnqc
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41596-019-0208-9
+  title: "Carbon nanotube\u2013mediated DNA delivery without transgene integration\
+    \ in intact plants"
+  authors:
+  - Gozde S. Demirer
+  - Huan Zhang
+  - Natalie S. Goh
+  - "Eduardo Gonz\xE1lez-Grand\xEDo"
+  - Markita P. Landry
+  publisher: Nature Protocols
+  date: '2019-09-18'
+  link: https://doi.org/gpznm7
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.molp.2019.06.010
+  title: "Nanoparticle-Mediated Genetic Engineering of\_Plants"
+  authors:
+  - Jeffrey W. Wang
+  - Eduardo G. Grandio
+  - Gregory M. Newkirk
+  - Gozde S. Demirer
+  - Salwan Butrus
+  - Juan Pablo Giraldo
+  - Markita P. Landry
+  publisher: Molecular Plant
+  date: '2019-08-01'
+  link: https://doi.org/gsg94w
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1073/pnas.1818290116
+  title: DNA nanostructures coordinate gene silencing in mature plants
+  authors:
+  - Huan Zhang\*
+  - Gozde S. Demirer\*
+  - Honglu Zhang
+  - Tianzheng Ye
+  - Natalie S. Goh
+  - Abhishek J. Aditham
+  - Francis J. Cunningham
+  - Chunhai Fan
+  - Markita P. Landry
+  publisher: Proceedings of the National Academy of Sciences
+  date: '2019-03-25'
+  link: https://doi.org/gmh7nd
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1038/s41565-019-0382-5
+  title: High aspect ratio nanomaterials enable delivery of functional genetic material
+    without DNA integration in mature plants
+  authors:
+  - Gozde S. Demirer
+  - Huan Zhang
+  - Juliana L. Matos
+  - Natalie S. Goh
+  - Francis J. Cunningham
+  - Younghun Sung
+  - Roger Chang
+  - Abhishek J. Aditham
+  - Linda Chio
+  - Myeong-Je Cho
+  - Brian Staskawicz
+  - Markita P. Landry
+  publisher: Nature Nanotechnology
+  date: '2019-02-25'
+  link: https://doi.org/gj8ghc
+  type: paper
+  group: prior
+  description: Interview and highlighted on NPR, popular mechanics, and C&E news
+  plugin: sources.py
+  file: sources.yaml
+- type: paper
+  group: prior
+  title: 'Nano-biolistics: A novel plant genetic transformation approach'
+  authors:
+  - Demirer G.S.\*
+  - Goh N.S. \*
+  - Cunningham F.J. \*
+  - Zhang H. \*
+  - Landry M.P.
+  publisher: Methods in Molecular Biology
+  date: '2018-12-01'
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.tibtech.2018.03.009
+  title: Nanoparticle-Mediated Delivery towards Advancing Plant Genetic Engineering
+  authors:
+  - Francis J. Cunningham\*
+  - Natalie S. Goh\*
+  - Gozde S. Demirer
+  - Juliana L. Matos
+  - Markita P. Landry
+  publisher: Trends in Biotechnology
+  date: '2018-09-01'
+  link: https://doi.org/gd35rh
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- type: paper
+  group: prior
+  title: Delivering Genes to Plants
+  authors:
+  - Demirer G.S.
+  - Landry M.P.
+  publisher: Chemical Engineering Progress
+  date: '2017-12-01'
+  link: https://escholarship.org/uc/item/2hp0j2g2
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.3791/55030
+  title: Engineering Molecular Recognition with Bio-mimetic Polymers on Single Walled
+    Carbon Nanotubes
+  authors:
+  - "Jackson T. Del Bonis-O\u2019Donnell"
+  - Abraham Beyene
+  - Linda Chio
+  - "G\xF6zde Demirer"
+  - Darwin Yang
+  - Markita P. Landry
+  publisher: Journal of Visualized Experiments
+  date: '2017-01-10'
+  link: https://doi.org/hcq7ck
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1002/cpch.10
+  title: "Nanoparticle\u2010Templated Molecular Recognition Platforms for Detection\
+    \ of Biological Analytes"
+  authors:
+  - Abraham G. Beyene\*
+  - Gozde S. Demirer\*
+  - Markita P. Landry
+  publisher: Current Protocols in Chemical Biology
+  date: '2016-09-01'
+  link: https://doi.org/hcq7cm
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1039/c5tb00931f
+  title: Synthesis and design of biologically inspired biocompatible iron oxide nanoparticles
+    for biomedical applications
+  authors:
+  - Gozde S. Demirer
+  - Aysu C. Okur
+  - Seda Kizilel
+  publisher: Journal of Materials Chemistry B
+  date: '2015-01-01'
+  link: https://doi.org/grtgfh
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1016/j.colsurfb.2014.07.049
+  title: Targeted delivery of doxorubicin into tumor cells via MMP-sensitive PEG hydrogel-coated
+    magnetic iron oxide nanoparticles (MIONPs)
+  authors:
+  - Caner Nazli
+  - Gozde S. Demirer
+  - Yasemin Yar
+  - H. Yagci Acar
+  - Seda Kizilel
+  publisher: 'Colloids and Surfaces B: Biointerfaces'
+  date: '2014-10-01'
+  link: https://doi.org/f6mr46
+  type: paper
+  group: prior
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Optimized R2 Retroelement Complexes Enable Precise and Efficient DNA Insertion
+    into Plant Genomes
+  authors:
+  - Demirer GS.
+  - Muchenje K.
+  publisher: Provisional patent filed, October 2025, CIT-9388-P
+  date: '2025-10-04'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: A 3D-Printed Capillary Tube Holder for High-Throughput Chemotaxis Assays
+  authors:
+  - Demirer GS.
+  - Berruto C.
+  publisher: Provisional patent filed, October 2025, CIT-9387-P
+  date: '2025-10-03'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Extracellular Contractile Injection Systems for High Efficiency Protein Delivery
+    to Plants
+  authors:
+  - Demirer GS.
+  - Legendre M.
+  publisher: Provisional patent filed, October 2025, CIT-9390-P
+  date: '2025-10-02'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Vacuum and Sonication Treatment Enables Efficient Transient Gene Expression
+    in Various Monocot and Eudicot Plant Seedlings
+  authors:
+  - Demirer GS.
+  - Li E.
+  publisher: Provisional patent filed, October 2025, CIT-9393-P
+  date: '2025-10-01'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Targeted DNA Integration in Plants by CRISPR-Associated Transposases
+  authors:
+  - Demirer GS.
+  - Wang Y.
+  - Muchenje K.
+  publisher: Provisional patent filed, CIT-9134-P. Patent filed, February 2025. U.S.
+    Patent Application No. 30KJ-810004
+  date: '2025-02-01'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Engineering Biofilm-Based Bioinoculants for Climate-Resilient Crops
+  authors:
+  - Demirer GS.
+  - Griffin C.
+  publisher: Provisional patent filed, CIT-9249-P, December 2024. Refiled in December
+    2025
+  date: '2024-12-02'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Identification of Chemical Targets for The Selective Enrichment of Desirable
+    Bacteria
+  authors:
+  - Demirer GS.
+  - Berruto C.
+  publisher: Provisional patent filed, CIT-9109-P. Patent filed, December 2024. U.S.
+    Patent Application No. 18/972,482
+  date: '2024-12-01'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Genetically Encoded Delivery Vehicles for Plant Genetic Engineering
+  authors:
+  - Demirer GS.
+  - Legendre M.
+  publisher: Provisional patent filed, CIT-9054-P, filed August 2023
+  date: '2023-08-01'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Mature plant transfection using carbon nanotubes
+  authors:
+  - Landry MP.
+  - Demirer GS.
+  publisher: International Patent App. 62/500450, 2017. US Patent App. 16/672459,
+    2020
+  date: '2020-01-01'
+  plugin: sources.py
+  file: sources.yaml
+- type: patent
+  title: Gene Silencing in Plants with DNA Origami Nanostructures
+  authors:
+  - Landry MP.
+  - Zhang H.
+  - Demirer GS.
+  publisher: Invention disclosure BK-2019-044, filed September 2018
+  date: '2018-09-01'
+  plugin: sources.py
+  file: sources.yaml

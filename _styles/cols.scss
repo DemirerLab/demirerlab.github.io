@@ -1,0 +1,139 @@
+---
+---
+
+$two: 750px;
+$one: 500px;
+
+.cols {
+  display: grid;
+  --repeat: min(3, var(--cols));
+  grid-template-columns: repeat(var(--repeat), minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(28px, 4vw, 56px);
+  margin: 48px 0;
+}
+
+.cols > * {
+  min-width: 0;
+  min-height: 0;
+}
+
+.cols > div > :first-child {
+  margin-top: 0 !important;
+}
+
+.cols > div > :last-child {
+  margin-bottom: 0 !important;
+}
+
+// a video beside a figure (the eCIS animation on Nanotechnology) share one
+// height: the shorter panel stretches and its content stays centered
+.cols:has(> div > video:only-child):has(> div > p:only-child > img:only-child) {
+  align-items: stretch;
+}
+
+.cols:has(> div > video:only-child) > div > p:only-child:has(> img:only-child) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cols:has(> div > p:only-child > img:only-child) > div > video:only-child {
+  height: 100%;
+  object-fit: contain;
+}
+
+// (the figure keeps its hover glow but doesn't lift, so the two panels'
+// edges stay level)
+.cols:has(> div > video:only-child) p:has(> img:only-child):hover {
+  transform: none;
+}
+
+// a figure beside a longer text (Nanotechnology intro, Diversity Pledge
+// poster) stays in view while the text scrolls past, never taller than the
+// window below the header; on tablets the text keeps a reading measure and
+// the figure follows it
+.cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div:has(> p:only-child > img:only-child) {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+}
+
+.cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div > p:only-child > img:only-child {
+  max-height: min(80vh, 820px, calc(100vh - 112px - 2 * clamp(12px, 1.8vw, 24px) - 26px));
+}
+
+@media (max-width: 1000px) {
+  .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    --repeat: 1;
+    max-width: var(--measure);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div:has(> p:only-child > img:only-child) {
+    position: static;
+  }
+
+  // research area pages keep their one wide column (section.scss), and the
+  // figure's card spans it like every other figure card there
+  body[data-research-area] .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    max-width: none;
+  }
+
+  body[data-research-area] .cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div > p:only-child:has(> img:only-child) {
+    width: 100%;
+  }
+}
+
+// on research area pages the text beside a figure (the Nanotechnology intro)
+// gets a little more of the row than the figure
+@media (min-width: 1001px) {
+  body[data-research-area] main > section > .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+}
+
+.cols iframe + p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.cols iframe + p em {
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.08rem;
+  font-style: normal;
+  font-weight: var(--semi-bold);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+@media (max-width: $two) {
+  .cols {
+    --repeat: min(2, var(--cols));
+  }
+}
+
+// three video embeds (Home "Research Videos") on tablets: the first at full
+// width, the other two side by side under it, so no player shrinks to a
+// thumbnail and none is left alone on a row
+@media (min-width: #{$one + 1px}) and (max-width: 960px) {
+  .cols:has(> div:nth-child(3):last-child > iframe) {
+    --repeat: 2;
+  }
+
+  .cols:has(> div:nth-child(3):last-child > iframe) > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: $one) {
+  .cols {
+    --repeat: min(1, var(--cols));
+  }
+}

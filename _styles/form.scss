@@ -1,0 +1,58 @@
+---
+---
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 34rem;
+  margin: 28px auto;
+}
+
+form input[type="text"] {
+  height: 54px;
+  padding: 0 24px;
+}
+
+form .button {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  margin: 0;
+  padding: 0;
+}
+
+// the site search (404 page) matches the page search boxes: a round field
+// with a pale-lime search button inside it (see search-box.scss)
+form:has(> input[name="query"]) {
+  position: relative;
+}
+
+form:has(> input[name="query"]) input[type="text"] {
+  padding: 0 60px 0 24px;
+}
+
+form:has(> input[name="query"]) .button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 40px;
+  height: 40px;
+  background: var(--accent-soft);
+  box-shadow: none;
+  color: var(--primary-strong);
+  font-size: 0.95rem;
+  transition: transform 0.3s var(--ease), background var(--transition), color var(--transition);
+}
+
+[data-dark="true"] form:has(> input[name="query"]) .button {
+  color: var(--primary);
+}
+
+form:has(> input[name="query"]) .button:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+  transform: scale(1.06);
+  filter: none;
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  {% include head.html %}
+  {%- comment -%} research area pages (research/<area>/) read as one wide column {%- endcomment -%}
+  {%- assign top_dir = page.dir | slice: 0, 10 -%}
+  <body data-layout="{{ page.layout | default: 'default' }}"{% if page.url == "/" %} data-home{% endif %}{% if top_dir == "/research/" and page.dir != "/research/" %} data-research-area{% endif %}>
+    {% include header.html %}
+    <main>
+      {% include content.html content=content %}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

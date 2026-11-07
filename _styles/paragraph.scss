@@ -1,0 +1,66 @@
+---
+---
+
+p {
+  margin: 1.1em 0;
+  text-align: left;
+  line-height: var(--spacing);
+  text-wrap: pretty;
+}
+
+// first paragraph after a banner: a larger standfirst with a drop cap
+main > section[data-banner] + section > p:first-child,
+main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+// (not on news posts, whose first paragraph starts with the date)
+body:not([data-layout="post"]) main > section[data-banner] + section > p:first-child:first-letter,
+body:not([data-layout="post"]) main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child:first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--primary);
+  font-family: var(--heading);
+  font-size: 3.4em;
+  font-weight: var(--thin);
+  line-height: 0.82;
+}
+
+@media (max-width: 700px) {
+  main > section[data-banner] + section > p:first-child,
+  main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+    font-size: 1.1rem;
+  }
+}
+
+// research area pages set their text as wide as the figures (section.scss),
+// so it is a little larger and more open for the longer line: 20px on
+// desktop (about 100 characters a line), 19px on iPads, about 18px on phones
+// (figure cards and media captions keep theirs)
+body[data-research-area] main > section:not([data-banner]) > :is(p, ul, ol):not(:has(> img)),
+body[data-research-area] main > section > .cols > div > :is(p, ul, ol):not(:has(> img)):not(:is(iframe, video) + p) {
+  font-size: clamp(1.1rem, 0.25vw + 1.05rem, 1.25rem);
+}
+
+body[data-research-area] main > section:not([data-banner]) > p:not(:has(> img)),
+body[data-research-area] main > section > .cols > div > p:not(:has(> img)):not(:is(iframe, video) + p) {
+  line-height: 1.8;
+}
+
+// (phone lines are short, so they need less leading)
+@media (max-width: 700px) {
+  body[data-research-area] main > section:not([data-banner]) > p:not(:has(> img)),
+  body[data-research-area] main > section > .cols > div > p:not(:has(> img)):not(:is(iframe, video) + p) {
+    line-height: 1.7;
+  }
+}
+
+// the standfirst stays clearly larger than the text: about 19px on phones,
+// 21px on iPads, 22.8px on desktop
+body[data-research-area] main > section[data-banner] + section > p:first-child,
+body[data-research-area] main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+  font-size: clamp(1.2rem, 0.5vw + 1.05rem, 1.425rem);
+  line-height: 1.7;
+}

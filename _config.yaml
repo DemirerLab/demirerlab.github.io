@@ -1,0 +1,104 @@
+# site properties and page defaults
+title: Demirer Lab
+subtitle: California Institute of Technology
+description: Nano and Biotechnology for Precise and Programmable Plant Genetic Engineering. We combine interdisciplinary solutions from nanotechnology, chemistry, plant biology, synthetic biology, and engineering.
+header:
+footer:
+# header follows the light/dark toggle ("auto"); the footer is always the deep green one
+header-dark: auto
+footer-dark: true
+proofer: false
+
+# site social media and other links
+links:
+  email: gdemirer@caltech.edu
+  google-scholar: WAhEY-QAAAAJ
+  bluesky: prof-gozde.bsky.social
+  twitter: Demirer_GozdeS
+
+### jekyll settings
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # markdown files in /_members
+  - scope:
+      type: "members"
+    values:
+      layout: member
+  # markdown files in /_posts
+  - scope:
+      type: "posts"
+    values:
+      layout: post
+
+collections:
+  # generate page for each member
+  members:
+    output: true
+    permalink: /team/:name/
+    # display order within each role on the Team page (members not listed appear after these)
+    order:
+      - gozde-s-demirer.md
+      - ashot-papikian.md
+      - carl-mccombe.md
+      - edith-sanchez-hernandez.md
+      - dylan-brown.md
+      - hikmet-geckil.md
+      - mark-g-legendre.md
+      - yunqing-wang.md
+      - eugene-li.md
+      - chiara-berruto.md
+      - kimberley-tanatswa-muchenje.md
+      - clair-colee.md
+      - andres-heredia.md
+      - teresa-rojas-rodriguez.md
+      - gigi-pistilli.md
+      - aurelia-kuester.md
+      - nicole-yang.md
+  # generate page for each post
+  posts:
+    output: true
+    permalink: /news/:year/:month/:day/:title/
+
+# jekyll plugins
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+
+# code block syntax highlighting
+highlighter: rouge
+
+# jekyll theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# force jekyll to include certain files/folders
+include:
+  - _styles
+  - _scripts
+  # keep GitHub Pages from re-running Jekyll on the built site (it would drop _styles and _scripts)
+  - .nojekyll
+
+# force jekyll to exclude certain files/folders
+exclude:
+  - README.md
+  - LICENSE.md
+  - CLAUDE.md
+  - MIGRATION_NOTES.md
+
+# configure jekyll spaceship
+jekyll-spaceship:
+  mathjax-processor:
+    src:
+      - https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js

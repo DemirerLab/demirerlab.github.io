@@ -1,0 +1,41 @@
+---
+---
+
+// scroll reveals (see _scripts/effects.js). targets are only hidden once the
+// script has marked <html> with "reveal-on" and tagged them "reveal" (only
+// those below the first screen), so all content stays visible without
+// JavaScript or with reduced motion.
+
+html.reveal-on .reveal {
+  opacity: 0;
+  translate: 0 28px;
+}
+
+html.reveal-on .reveal.is-revealed {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 0.8s var(--ease) var(--reveal-delay, 0ms),
+    translate 0.9s var(--ease) var(--reveal-delay, 0ms);
+}
+
+// a printout shows everything, whether or not it was scrolled into view
+@media print {
+  html.reveal-on .reveal {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none !important;
+  }
+}
+
+// global reduced-motion safety net
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
