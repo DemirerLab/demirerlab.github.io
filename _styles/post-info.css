@@ -1,0 +1,34 @@
+.post-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.post-info .portrait {
+  margin: 0;
+}
+
+.post-info .icon {
+  margin-right: 0.5em;
+  color: var(--primary);
+}
+
+.post-info a {
+  color: inherit;
+}
+
+.post-info a:hover {
+  color: var(--primary);
+}
+
+.post-info > span {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=post-info.css.map */
