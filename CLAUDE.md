@@ -3,7 +3,7 @@
 Source for https://www.demirerlab.com, migrated from Wix in November 2026. The PI (Gözde Demirer) asks Claude for routine updates ("add this paper", "add/remove this person", "add this photo", "post this news"). This file is the playbook for those requests.
 
 - GitHub repository: https://github.com/DemirerLab/demirerlab.github.io (public, first pushed 2026-11-07; the live site builds from `main`). Commits here use the PI's private GitHub address (`267142305+gozdedemirer@users.noreply.github.com`, set in this repo's git config), so no personal email shows in the public history.
-- Custom domain: www.demirerlab.com (switched 2026-11-07; set by the `CNAME` file, and verified for the DemirerLab org). DNS stays at Wix: the apex `demirerlab.com` has A records to GitHub's four IPs (185.199.108-111.153), `www` is a CNAME to `demirerlab.github.io`, and a `_github-pages-challenge-DemirerLab` TXT record keeps the domain verified (don't delete it). The domain is registered at Wix and expires 2026-12-17, so keep auto-renew on.
+- Custom domain: demirerlab.com, with www.demirerlab.com forwarding to it (switched 2026-11-07; set by the `CNAME` file, and verified for the DemirerLab org). The apex is the main address because GitHub's certificate then covers both names; with www as the main address it only covered www. DNS stays at Wix: the apex `demirerlab.com` has A records to GitHub's four IPs (185.199.108-111.153), `www` is a CNAME to `demirerlab.github.io`, and a `_github-pages-challenge-DemirerLab` TXT record keeps the domain verified (don't delete it). The domain is registered at Wix and expires 2026-12-17, so keep auto-renew on.
 
 ## How the site works
 
