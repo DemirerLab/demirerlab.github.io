@@ -4,7 +4,7 @@
 
 # Demirer Lab website
 
-Source for **[www.demirerlab.com](https://www.demirerlab.com)**, the website of the Demirer Lab at Caltech.
+Source for **[demirerlab.com](http://demirerlab.com)**, the website of the Demirer Lab at Caltech.
 
 - People: `_members/`
 - Publications: `_data/sources.yaml` (citations are generated automatically from DOIs)
