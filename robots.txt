@@ -1,1 +1,1 @@
-Sitemap: http://www.demirerlab.com/sitemap.xml
+Sitemap: http://demirerlab.com/sitemap.xml
