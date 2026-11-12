@@ -57,9 +57,8 @@ collections:
       - clair-colee.md
       - andres-heredia.md
       - teresa-rojas-rodriguez.md
-      - gigi-pistilli.md
       - aurelia-kuester.md
-      - nicole-yang.md
+      - lucas-garcia.md
   # generate page for each post
   posts:
     output: true
