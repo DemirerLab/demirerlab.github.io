@@ -1,0 +1,58 @@
+ul,
+ol {
+  margin: 1.2em 0;
+  padding-left: 1.6em;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0.5em 0;
+  padding-left: 0.4em;
+  text-align: left;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+li ul,
+li ol {
+  margin: 0.4em 0;
+}
+
+li > p {
+  margin: 0;
+}
+
+li > p + * {
+  margin-top: 0.4em;
+}
+
+ul > li {
+  position: relative;
+}
+
+ul > li:before {
+  content: "";
+  position: absolute;
+  left: -0.95em;
+  top: 0.7em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0 70% 0 70%;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+}
+
+ul ul > li:before {
+  background: none;
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+
+ol > li::marker {
+  color: var(--primary);
+  font-family: var(--heading);
+  font-weight: var(--semi-bold);
+}
+
+/*# sourceMappingURL=list.css.map */
