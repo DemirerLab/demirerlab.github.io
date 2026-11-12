@@ -1,0 +1,168 @@
+section {
+  padding: 76px max(40px, (100% - 1120px) / 2);
+  transition: background var(--transition), color var(--transition);
+}
+
+section[data-size=wide] {
+  padding: 76px 40px;
+}
+
+section[data-size=full] {
+  padding: 0;
+}
+
+section[data-size=full] > * {
+  margin: 0;
+  border-radius: 0;
+}
+
+section[data-size=full] img {
+  border-radius: 0;
+}
+
+main > section:last-of-type {
+  flex-grow: 1;
+}
+
+main > section > :first-child {
+  margin-top: 0;
+}
+
+main > section > :last-child {
+  margin-bottom: 0;
+}
+
+main > section:nth-of-type(odd),
+main > section:nth-of-type(even) {
+  background: var(--background);
+}
+
+main > section:first-child:not([data-banner]) {
+  --leaf: right max(-80px, calc((100% - 1120px) / 2 - 260px)) top -64px / auto min(480px, calc(100% + 40px));
+  padding-top: clamp(64px, 7vw, 104px);
+  padding-bottom: 56px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 320' fill='none' stroke='%234a7a12' stroke-opacity='.2' stroke-width='1.1' stroke-linecap='round'%3E%3Cg transform='rotate(-32 100 160)'%3E%3Cpath d='M100 10C170 60 185 190 100 290C15 190 30 60 100 10ZM100 18C102 120 100 200 100 312M100 70C120 66 140 70 156 84M100 115C125 108 150 115 168 132M101 160C126 154 150 162 166 182M101 205C120 202 138 210 150 226M100 245C112 244 124 250 132 260M100 70C80 66 60 70 44 84M100 115C75 108 50 115 32 132M99 160C74 154 50 162 34 182M99 205C80 202 62 210 50 226M100 245C88 244 76 250 68 260'/%3E%3C/g%3E%3C/svg%3E") var(--leaf) no-repeat, radial-gradient(55% 340px at 8% 0%, rgba(168, 209, 79, 0.2), rgba(168, 209, 79, 0) 100%), radial-gradient(45% 300px at 96% 0%, rgba(74, 122, 18, 0.1), rgba(74, 122, 18, 0) 100%), linear-gradient(180deg, var(--background-alt) 0, var(--background) min(440px, 100%));
+}
+
+[data-dark=true] main > section:first-child:not([data-banner]) {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 320' fill='none' stroke='%23b4d86a' stroke-opacity='.13' stroke-width='1.1' stroke-linecap='round'%3E%3Cg transform='rotate(-32 100 160)'%3E%3Cpath d='M100 10C170 60 185 190 100 290C15 190 30 60 100 10ZM100 18C102 120 100 200 100 312M100 70C120 66 140 70 156 84M100 115C125 108 150 115 168 132M101 160C126 154 150 162 166 182M101 205C120 202 138 210 150 226M100 245C112 244 124 250 132 260M100 70C80 66 60 70 44 84M100 115C75 108 50 115 32 132M99 160C74 154 50 162 34 182M99 205C80 202 62 210 50 226M100 245C88 244 76 250 68 260'/%3E%3C/g%3E%3C/svg%3E") var(--leaf) no-repeat, radial-gradient(55% 340px at 8% 0%, rgba(150, 200, 70, 0.12), rgba(150, 200, 70, 0) 100%), radial-gradient(45% 300px at 96% 0%, rgba(180, 216, 106, 0.06), rgba(180, 216, 106, 0) 100%), linear-gradient(180deg, var(--background-alt) 0, var(--background) min(440px, 100%));
+}
+
+main > section:last-of-type:nth-of-type(n + 3):not([data-banner]) {
+  background: var(--background-alt);
+}
+
+main > section:not(:first-of-type) + section:not(:last-of-type):not([data-banner]):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(var(--wide), 100% - 80px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--line-strong) 20%, var(--line-strong) 80%, transparent);
+  pointer-events: none;
+}
+
+main > section > :where(p, ul, ol, h2, h3, h4, h5, h6, blockquote, hr, dl, details, .alert, .search-box, .search-info, .highlighter-rouge) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--measure);
+}
+
+main > section > :where(.citation-container, .post-excerpt-container, .tags) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--list);
+}
+
+main > section > .search-box {
+  max-width: var(--list);
+}
+
+main > section:has(> .citation-container, > .post-excerpt-container) > :where(p, ul, ol, h2, h3, h4, .search-box, .search-info) {
+  max-width: var(--list);
+}
+
+main > section > p:has(~ .search-box) {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+main > section > h1 + p:has(~ .search-box) {
+  margin-top: 0.2em;
+}
+
+main > section:has(> .feature, > .cols iframe) > :where(h2, h3) {
+  max-width: none;
+}
+
+body[data-research-area] main > section > :where(p, ul, ol, h2, h3, h4, h5, h6, blockquote, hr, dl, details, .alert, .citation-container) {
+  max-width: none;
+}
+
+body[data-research-area] main > section > h2 {
+  max-width: 24em;
+  margin-left: 0;
+}
+
+@media (min-width: 701px) {
+  body[data-research-area] main > section {
+    padding-left: max(40px, (100% - var(--figure)) / 2);
+    padding-right: max(40px, (100% - var(--figure)) / 2);
+  }
+  body[data-research-area] main > section:not(:first-of-type) + section:not(:last-of-type):not([data-banner]):after {
+    width: min(var(--figure), 100% - 80px);
+  }
+}
+main > section:first-child:not([data-banner]) + section {
+  padding-top: 56px;
+}
+
+main > section:has(> .portrait-wrapper) > :where(h2, h3) {
+  text-align: center;
+}
+
+main > section:is(#alumni, :has(> h2#alumni)) > :where(h2, ul) {
+  max-width: var(--list);
+}
+
+main > section:has(> .citation-container) > p:has(> strong:only-child) {
+  margin-top: 2.6em;
+  color: var(--primary-strong);
+  font-family: var(--heading);
+  font-size: 1.3rem;
+}
+
+main > section:has(> .citation-container) > p:has(> strong:only-child) > strong {
+  font-weight: var(--regular);
+}
+
+[data-dark=true] main > section:has(> .citation-container) > p:has(> strong:only-child) {
+  color: var(--primary);
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 56px 22px;
+  }
+  section[data-size=wide] {
+    padding: 56px 22px;
+  }
+  main > section:first-child:not([data-banner]) {
+    --leaf: right -64px top -52px / 170px auto;
+    padding-top: 52px;
+    padding-bottom: 40px;
+  }
+  main > section:first-child:not([data-banner]) + section {
+    padding-top: 40px;
+  }
+  main > section:not(:first-of-type) + section:not(:last-of-type):not([data-banner]):after {
+    width: calc(100% - 44px);
+  }
+}
+
+/*# sourceMappingURL=section.css.map */

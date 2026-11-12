@@ -1,0 +1,112 @@
+.cols {
+  display: grid;
+  --repeat: min(3, var(--cols));
+  grid-template-columns: repeat(var(--repeat), minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(28px, 4vw, 56px);
+  margin: 48px 0;
+}
+
+.cols > * {
+  min-width: 0;
+  min-height: 0;
+}
+
+.cols > div > :first-child {
+  margin-top: 0 !important;
+}
+
+.cols > div > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.cols:has(> div > video:only-child):has(> div > p:only-child > img:only-child) {
+  align-items: stretch;
+}
+
+.cols:has(> div > video:only-child) > div > p:only-child:has(> img:only-child) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cols:has(> div > p:only-child > img:only-child) > div > video:only-child {
+  height: 100%;
+  object-fit: contain;
+}
+
+.cols:has(> div > video:only-child) p:has(> img:only-child):hover {
+  transform: none;
+}
+
+.cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div:has(> p:only-child > img:only-child) {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+}
+
+.cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div > p:only-child > img:only-child {
+  max-height: min(80vh, 820px, 100vh - 112px - 2 * clamp(12px, 1.8vw, 24px) - 26px);
+}
+
+@media (max-width: 1000px) {
+  .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    --repeat: 1;
+    max-width: var(--measure);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div:has(> p:only-child > img:only-child) {
+    position: static;
+  }
+  body[data-research-area] .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    max-width: none;
+  }
+  body[data-research-area] .cols:has(> div > p:only-child > img:only-child):not(:has(video)) > div > p:only-child:has(> img:only-child) {
+    width: 100%;
+  }
+}
+@media (min-width: 1001px) {
+  body[data-research-area] main > section > .cols:has(> div > p:only-child > img:only-child):not(:has(video)) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+}
+.cols iframe + p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.cols iframe + p em {
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.08rem;
+  font-style: normal;
+  font-weight: var(--semi-bold);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 750px) {
+  .cols {
+    --repeat: min(2, var(--cols));
+  }
+}
+@media (min-width: 501px) and (max-width: 960px) {
+  .cols:has(> div:nth-child(3):last-child > iframe) {
+    --repeat: 2;
+  }
+  .cols:has(> div:nth-child(3):last-child > iframe) > div:first-child {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 500px) {
+  .cols {
+    --repeat: min(1, var(--cols));
+  }
+}
+
+/*# sourceMappingURL=cols.css.map */

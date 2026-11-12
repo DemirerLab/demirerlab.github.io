@@ -1,0 +1,54 @@
+p {
+  margin: 1.1em 0;
+  text-align: left;
+  line-height: var(--spacing);
+  text-wrap: pretty;
+}
+
+main > section[data-banner] + section > p:first-child,
+main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+body:not([data-layout=post]) main > section[data-banner] + section > p:first-child:first-letter,
+body:not([data-layout=post]) main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child:first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--primary);
+  font-family: var(--heading);
+  font-size: 3.4em;
+  font-weight: var(--thin);
+  line-height: 0.82;
+}
+
+@media (max-width: 700px) {
+  main > section[data-banner] + section > p:first-child,
+  main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+    font-size: 1.1rem;
+  }
+}
+body[data-research-area] main > section:not([data-banner]) > :is(p, ul, ol):not(:has(> img)),
+body[data-research-area] main > section > .cols > div > :is(p, ul, ol):not(:has(> img)):not(:is(iframe, video) + p) {
+  font-size: clamp(1.1rem, 0.25vw + 1.05rem, 1.25rem);
+}
+
+body[data-research-area] main > section:not([data-banner]) > p:not(:has(> img)),
+body[data-research-area] main > section > .cols > div > p:not(:has(> img)):not(:is(iframe, video) + p) {
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  body[data-research-area] main > section:not([data-banner]) > p:not(:has(> img)),
+  body[data-research-area] main > section > .cols > div > p:not(:has(> img)):not(:is(iframe, video) + p) {
+    line-height: 1.7;
+  }
+}
+body[data-research-area] main > section[data-banner] + section > p:first-child,
+body[data-research-area] main > section[data-banner] + section > .cols:first-child > div:first-child > p:first-child {
+  font-size: clamp(1.2rem, 0.5vw + 1.05rem, 1.425rem);
+  line-height: 1.7;
+}
+
+/*# sourceMappingURL=paragraph.css.map */

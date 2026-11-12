@@ -1,0 +1,120 @@
+.figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  margin: 2.6rem 0;
+}
+
+.figure-image {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: clamp(8px, 1.2vw, 14px);
+  border: 1px solid var(--mat-line);
+  border-radius: var(--radius-card);
+  background: var(--mat);
+  box-shadow: var(--shadow-md);
+  line-height: 0;
+  transition: transform 0.5s var(--ease);
+}
+
+.figure-image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: var(--shadow-lg), var(--mat-glow);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  pointer-events: none;
+}
+
+.figure-image:hover {
+  transform: translateY(-4px);
+}
+
+.figure-image:hover:after {
+  opacity: 1;
+}
+
+.figure-image img {
+  display: block;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+}
+
+.figure-caption {
+  max-width: 34em;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: normal;
+  line-height: 1.55;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.figure-caption strong {
+  color: var(--ink);
+}
+
+.grid .figure:has(> a.figure-image:not([href])) {
+  justify-content: flex-start;
+}
+
+.grid .figure:has(> a.figure-image:not([href])) .figure-image {
+  width: 100%;
+}
+
+.grid .figure:has(> a.figure-image:not([href])) .figure-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+
+[data-dark=true] :is(.grid, body[data-layout=post] main > section) > .figure:has(> a.figure-image:not([href])) .figure-image {
+  border-color: var(--line);
+  background: var(--card);
+}
+
+[data-dark=true] :is(.grid, body[data-layout=post] main > section) > .figure:has(> a.figure-image:not([href])) .figure-image img {
+  mix-blend-mode: normal;
+}
+
+body[data-layout=post] main > section > .figure .figure-image img {
+  max-height: min(75vh, 720px) !important;
+}
+
+.grid .figure:has(> a.figure-image[href]) {
+  justify-content: flex-start;
+}
+
+.grid .figure:has(> a.figure-image[href]) .figure-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+.grid .figure:has(> a.figure-image[href]) .figure-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .grid .figure:has(> a.figure-image[href]) .figure-image {
+    aspect-ratio: auto;
+  }
+  .grid .figure:has(> a.figure-image[href]) .figure-image img {
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=figure.css.map */

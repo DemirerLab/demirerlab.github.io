@@ -1,0 +1,48 @@
+.search-box {
+  position: relative;
+  height: 54px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.search-box .search-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 60px 0 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  bottom: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--primary-strong);
+  font-size: 0.95rem;
+  transition: transform 0.3s var(--ease), background var(--transition), color var(--transition);
+}
+
+[data-dark=true] .search-box button {
+  color: var(--primary);
+}
+
+.search-box button:not([disabled]):hover {
+  background: var(--primary);
+  color: var(--on-primary);
+  transform: scale(1.06);
+}
+
+.search-box button[disabled] {
+  cursor: default;
+}
+
+/*# sourceMappingURL=search-box.css.map */
