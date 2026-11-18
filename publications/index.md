@@ -19,6 +19,12 @@ For full list: [Google Scholar](https://scholar.google.com/citations?hl=en&user=
   link="Gozde_Demirer"
   text="Find and request our materials on Addgene"
 %}
+{%
+  include button.html
+  type="abrc"
+  link="CS74175"
+  text="Find our seed lines at ABRC"
+%}
 
 {% include search-box.html %}
 

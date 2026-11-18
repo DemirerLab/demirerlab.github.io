@@ -250,6 +250,12 @@ addgene:
   tooltip: Our plasmids on Addgene
   link: https://www.addgene.org/$VALUE/
 
+abrc:
+  icon: fa-solid fa-seedling
+  text: ABRC
+  tooltip: Our seed lines at ABRC
+  link: https://abrc.osu.edu/stocks/number/$VALUE
+
 # added for the Demirer Lab (publications)
 
 # Citation types used in _data/sources.yaml that the template's _data/types.yaml lacks.
