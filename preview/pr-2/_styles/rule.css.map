@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["rule.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA","sourcesContent":["hr {\n  margin: 56px auto;\n  height: 1px;\n  border: none;\n  background: linear-gradient(90deg, transparent, var(--line-strong) 20%, var(--line-strong) 80%, transparent);\n}\n"],"file":"rule.css"}
