@@ -13,6 +13,13 @@ nav:
 
 For full list: [Google Scholar](https://scholar.google.com/citations?hl=en&user=WAhEY-QAAAAJ&view_op=list_works&sortby=pubdate)
 
+{%
+  include button.html
+  type="addgene"
+  link="Gozde_Demirer"
+  text="Find and request our materials on Addgene"
+%}
+
 {% include search-box.html %}
 
 {% include search-info.html %}

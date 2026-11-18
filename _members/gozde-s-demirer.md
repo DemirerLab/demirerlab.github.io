@@ -18,6 +18,7 @@ aliases:
 links:
   email: gdemirer@caltech.edu
   google-scholar: WAhEY-QAAAAJ
+  addgene: Gozde_Demirer
   bluesky: prof-gozde.bsky.social
   twitter: Demirer_GozdeS
   cv: files/gozde-s-demirer-cv.pdf

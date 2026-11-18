@@ -244,6 +244,12 @@ cv:
   text: CV
   tooltip: CV
 
+addgene:
+  icon: fa-solid fa-dna
+  text: Addgene
+  tooltip: Our plasmids on Addgene
+  link: https://www.addgene.org/$VALUE/
+
 # added for the Demirer Lab (publications)
 
 # Citation types used in _data/sources.yaml that the template's _data/types.yaml lacks.
