@@ -1,22 +1,23 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
-- type: paper
-  group: caltech
-  tags:
-  - nanotechnology
+- id: doi:10.1038/s41565-026-02323-w
   title: An extracellular contractile injection system for receptor-mediated protein
     delivery into plant cells
   authors:
-  - Legendre MG.
-  - Muchenje K.
-  - Heredia A.
-  - Colee C.
-  - Wang Y.
-  - Pistilli V.
-  - "Demirer GS\u2021"
-  publisher: Nature Nanotechnology (In press)
-  date: '2026-12-31'
-  link: https://www.biorxiv.org/content/10.1101/2025.08.22.671880v2
+  - Mark G. Legendre
+  - Kimberley T. Muchenje
+  - "Andr\xE9s Heredia"
+  - Clair Colee
+  - Yunqing Wang
+  - Virginia H. Pistilli
+  - "Gozde S. Demirer\u2021"
+  publisher: Nature Nanotechnology
+  date: '2026-11-18'
+  link: https://doi.org/hcs56h
+  type: paper
+  group: caltech
+  tags:
+  - nanotechnology
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1038/s41587-026-03197-y

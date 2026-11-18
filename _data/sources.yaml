@@ -17,22 +17,19 @@
 # At Caltech
 # ----------------------------------------------------------------------------
 
-# Legendre et al. 2026, Nature Nanotechnology (in press; no DOI yet, link is the bioRxiv preprint given on the Nanotechnology page)
-- type: paper
+# Legendre et al. 2026, Nature Nanotechnology (published 2026-11-18; preprint 10.1101/2025.08.22.671880)
+- id: doi:10.1038/s41565-026-02323-w
+  type: paper
   group: caltech
   tags: [nanotechnology]
-  title: "An extracellular contractile injection system for receptor-mediated protein delivery into plant cells"
   authors:
-    - "Legendre MG."
-    - "Muchenje K."
-    - "Heredia A."
-    - "Colee C."
-    - "Wang Y."
-    - "Pistilli V."
-    - "Demirer GS‡"
-  publisher: "Nature Nanotechnology (In press)"
-  date: 2026-12-31  # placeholder day, sets the order shown on the old site (only the year is displayed)
-  link: "https://www.biorxiv.org/content/10.1101/2025.08.22.671880v2"
+    - "Mark G. Legendre"
+    - "Kimberley T. Muchenje"
+    - "Andrés Heredia"
+    - "Clair Colee"
+    - "Yunqing Wang"
+    - "Virginia H. Pistilli"
+    - "Gozde S. Demirer‡"
 
 # Muchenje et al. 2026, Nature Biotechnology
 - id: doi:10.1038/s41587-026-03197-y
