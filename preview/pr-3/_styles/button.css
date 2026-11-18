@@ -1,0 +1,84 @@
+button {
+  cursor: pointer;
+}
+
+.button-wrapper {
+  display: contents;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  max-width: calc(100% - 6px - 6px);
+  margin: 6px;
+  padding: 0.8em 1.45em;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: var(--on-primary);
+  text-align: center;
+  font: inherit;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  font-weight: var(--semi-bold);
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  vertical-align: middle;
+  text-wrap: balance;
+  appearance: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 10px 22px -12px rgba(47, 90, 12, 0.7);
+  transition: transform 0.3s var(--ease), filter 0.3s var(--ease), color var(--transition);
+}
+
+@media (max-width: 400px) {
+  .button:not([data-style=bare]) {
+    padding-left: 1.15em;
+    padding-right: 1.15em;
+  }
+}
+.button:hover {
+  color: var(--on-primary);
+  transform: translateY(-2px);
+  filter: brightness(1.08) saturate(1.1);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button .icon {
+  transition: transform 0.3s var(--ease);
+}
+
+.button:hover .fa-arrow-right,
+.button:focus-visible .fa-arrow-right {
+  transform: translateX(4px);
+}
+
+[data-dark=true] .button:not([data-style=bare]) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 24px -12px rgba(0, 0, 0, 0.8);
+}
+
+.button[data-style=bare] {
+  padding: 0.45em 0.3em;
+  border-radius: 10px;
+  background: none;
+  box-shadow: none;
+  color: var(--primary);
+  font-weight: var(--semi-bold);
+}
+.button[data-style=bare]:hover {
+  color: var(--primary-strong);
+  transform: none;
+  filter: none;
+}
+
+.button[data-flip] {
+  flex-direction: row-reverse;
+}
+
+/*# sourceMappingURL=button.css.map */
