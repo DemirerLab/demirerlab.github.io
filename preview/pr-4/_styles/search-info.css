@@ -1,0 +1,10 @@
+.search-info {
+  margin: 20px auto;
+  color: var(--muted);
+  text-align: center;
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: var(--spacing);
+}
+
+/*# sourceMappingURL=search-info.css.map */
