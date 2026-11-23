@@ -1,0 +1,142 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main p:has(> img:only-child) {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  max-width: min(100%, var(--figure));
+  margin: 2.6rem auto;
+  padding: clamp(12px, 1.8vw, 24px);
+  border: 1px solid var(--mat-line);
+  border-radius: var(--radius-media);
+  background: var(--mat);
+  box-shadow: var(--shadow-md);
+  line-height: 0;
+  transition: transform 0.5s var(--ease);
+}
+
+main p:has(> img:only-child):after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: var(--shadow-lg), var(--mat-glow);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  pointer-events: none;
+}
+
+main p:has(> img:only-child):hover {
+  transform: translateY(-3px);
+}
+
+main p:has(> img:only-child):hover:after {
+  opacity: 1;
+}
+
+main p:has(> img:only-child) > img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  max-height: min(80vh, 820px);
+  object-fit: contain;
+}
+
+main > section > p:has(> img:only-child):first-child {
+  margin-top: 0;
+}
+
+main > section > p:has(> img:only-child):last-child {
+  margin-bottom: 0;
+}
+
+body[data-research-area] main > section > p:has(> img:only-child) {
+  width: 100%;
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p > img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  width: min(100%, var(--figure));
+  margin-bottom: 0;
+  padding-bottom: calc(2 * clamp(12px, 1.8vw, 24px) + clamp(40px, 11vw - 8px, 104px));
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  position: relative;
+  isolation: auto;
+  width: min(100%, var(--figure));
+  margin-top: calc(-1px - clamp(12px, 1.8vw, 24px) - clamp(40px, 11vw - 8px, 104px));
+  margin-bottom: calc(1px + clamp(12px, 1.8vw, 24px));
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p > img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p + p > img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  padding-bottom: calc(3 * clamp(12px, 1.8vw, 24px) + 2 * clamp(40px, 11vw - 8px, 104px));
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p > img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  margin-top: calc(-1px - 2 * (clamp(12px, 1.8vw, 24px) + clamp(40px, 11vw - 8px, 104px)));
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  margin-top: -1px;
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) > img {
+  width: auto;
+  height: clamp(40px, 11vw - 8px, 104px);
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p > img:only-child:is([alt~=logo i], [alt~=logos i])),
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) {
+  transform: none !important;
+}
+
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):has(+ p > img:only-child:is([alt~=logo i], [alt~=logos i])):after,
+main p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])) + p:has(> img:only-child:is([alt~=logo i], [alt~=logos i])):after {
+  display: none;
+}
+
+.cols p:has(> img:only-child) {
+  margin: 0 auto;
+}
+
+@supports not selector(:has(*)) {
+  main p > img:only-child {
+    display: block;
+    margin: 2rem auto;
+    padding: 16px;
+    border: 1px solid var(--mat-line);
+    border-radius: var(--radius-media);
+    background: var(--mat);
+    box-shadow: var(--shadow-md);
+  }
+}
+main video,
+main iframe {
+  display: block;
+  border-radius: var(--radius-media);
+  background: var(--background-alt);
+  box-shadow: var(--shadow-md);
+}
+
+[data-dark=true] main video {
+  box-shadow: 0 0 0 1px var(--mat-line), var(--shadow-md);
+}
+
+main iframe[src*=youtube] {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23ffffff' fill-opacity='.12' stroke='%23ffffff' stroke-opacity='.45'/%3E%3Cpath d='M26 21.5v21l17-10.5z' fill='%23ffffff' fill-opacity='.9'/%3E%3C/svg%3E") 50% 50%/64px 64px no-repeat, radial-gradient(80% 90% at 15% 100%, rgba(150, 200, 60, 0.35), rgba(150, 200, 60, 0) 70%), linear-gradient(135deg, #1d3d24 0%, #10241a 100%);
+}
+
+main iframe[src*=maps] {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4c-7.7 0-14 6-14 13.6C10 28 24 44 24 44s14-16 14-26.4C38 10 31.7 4 24 4z' fill='%234a7a12' fill-opacity='.85'/%3E%3Ccircle cx='24' cy='17.5' r='5' fill='%23ffffff'/%3E%3C/svg%3E") 50% 50%/44px 44px no-repeat, linear-gradient(135deg, var(--accent-soft), var(--background-alt));
+}
+
+/*# sourceMappingURL=image.css.map */

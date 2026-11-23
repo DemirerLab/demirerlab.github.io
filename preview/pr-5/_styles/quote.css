@@ -1,0 +1,20 @@
+blockquote {
+  margin: 28px 0;
+  padding: 6px 0 6px 24px;
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: var(--thin);
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=quote.css.map */
